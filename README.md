@@ -44,7 +44,7 @@ npm run dev
 
   | **Nicolas Monsalve Gomez**|
 |:-:|
-|<a href="https://www.linkedin.com/in/pablo-cristaldo-4489b1268"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+|<a href="https://www.linkedin.com/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
  ### ⚛️ Front End:
 
