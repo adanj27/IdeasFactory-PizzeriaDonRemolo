@@ -36,3 +36,6 @@ npm install
 ```bash
 npm run dev
 ```
+
+
+INTEGRANTES DEL PROYECTO
