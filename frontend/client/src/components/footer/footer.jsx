@@ -8,7 +8,7 @@ function Footer() {
         <img src="Instagram.png" alt="logoInstagram" className="h-6 inline-block mr-4" />
         <img src="Whatsapp.png" alt="logowhatsapp" className="h-6 inline-block" />
         <img src="logo_4-removebg-preview 1.png" alt="logoPizza" className=" mx-auto" />
-        <p>Copyright© 2023 Pizzeria Don Remolo</p>
+        <p>Copyright © 2023 Pizzeria Don Remolo. All rights reserved.</p>
       </div>
     </footer>
   );
