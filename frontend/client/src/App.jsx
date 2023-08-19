@@ -1,9 +1,15 @@
 import React from 'react';
 import './App.css';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
-    <h1>Frontend</h1>
+
+    <div>
+      <h1>Frontend</h1>
+      <Footer />
+    </div>
+
   );
 }
 
