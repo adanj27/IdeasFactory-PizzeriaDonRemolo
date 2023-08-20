@@ -9,7 +9,6 @@ function App() {
     <div>
       <Navbar />
       <Home />
-      <h1>Frontend</h1>
       <Footer />
     </div>
   );
