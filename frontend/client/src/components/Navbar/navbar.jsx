@@ -11,7 +11,6 @@ function Navbar() {
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
-    //Realizar la lógica de búsqueda según el término ingresado
   };
 
   const addToCart = () => {
@@ -43,7 +42,7 @@ function Navbar() {
             )}
 
             <button
-              type="button" 
+              type="button"
               className="text-white hover:text-gray-300 p-1 bg-transparent focus:outline-none h-8"
               onClick={toggleSearch}
             >
@@ -56,7 +55,7 @@ function Navbar() {
 
             <div className="ml-3">
               <button
-                type="button" 
+                type="button"
                 className="text-black p-1 bg-transparent focus:outline-none border border-none rounded shadow-md h-8 w-20 md:w-24 flex items-center justify-center"
                 onClick={addToCart}
               >

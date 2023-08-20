@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Footer from './components/footer/footer';
-import Navbar from './components/Navbar/navbar'; // Asumiendo que este import es correcto
+import Navbar from './components/Navbar/navbar';// Asumiendo que este import es correcto
 import Home from './pages/Home';
 
 function App() {
