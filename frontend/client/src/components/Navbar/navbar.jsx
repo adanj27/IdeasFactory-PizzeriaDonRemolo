@@ -15,7 +15,6 @@ function Navbar() {
 
   const addToCart = () => {
     setCartCount(cartCount + 1);
-    //agregar al carrito
   };
 
   return (
