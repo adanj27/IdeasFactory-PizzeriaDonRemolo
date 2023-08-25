@@ -21,10 +21,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  plugins: ['react-refresh'],
   rules: {
-    'import/extensions': ['error', 'always', {
-      js: 'never',
-      jsx: 'never',
-    }],
+    'react-refresh/only-export-components' : ['warn', { allowConstantExport: true },
+  ],
+  'react/jsx-filename-extension' : 'off',
+  'import/no-extraneous-dependencies' : 'off',
+  'import/extensions' : 'off',
+  'import/no-unresolved': 'off',
+  indent: ['error', 2],
   }, // Asegúrate de cerrar las reglas con un corchete de cierre
 };
