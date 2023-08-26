@@ -22,5 +22,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-  },
+    'import/extensions': ['error', 'always', {
+      js: 'never',
+      jsx: 'never',
+    }],
+  }, // Asegúrate de cerrar las reglas con un corchete de cierre
 };
