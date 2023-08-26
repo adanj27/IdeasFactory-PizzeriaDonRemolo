@@ -57,7 +57,7 @@ npm run dev
 ### ⚙️ Backend:
 
 | **Anthony Franklin Zavaleta Roldan**| **David Figuerero**| **Yeferson De Jesus Agudelo Quirama**|
-|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|
 | <a href="https://github.com/One-For-Alls"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/anthony-franklin-zavaleta-roldan-1a232523b"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/Davidfi34"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/david-figuerero-developer"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/Yf3rs0n"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/yeferson-de-jesus-agudelo-quirama"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 <hr/>
 
