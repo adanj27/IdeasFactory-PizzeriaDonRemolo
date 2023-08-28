@@ -24,7 +24,7 @@ function MenuCards() {
     },
   ];
   return (
-    <section className="flex w-1/2 mx-auto my-12">
+    <section className="flex justify-center items-center w-1/2 mx-auto my-12">
       <div className="flex flex-wrap gap-10">
         {cardData.map((item) => (
           <div key={item.title}>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-white py-4 text-center absolute w-full bottom-0 mt-4">
+    <footer className="bg-white py-4 text-center flex justify-center items-center w-full bottom-0 mt-4">
       <div className="container mx-auto">
         <img
           src="Facebook.png"
