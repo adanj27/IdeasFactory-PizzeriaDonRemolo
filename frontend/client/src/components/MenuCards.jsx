@@ -25,7 +25,7 @@ function MenuCards() {
   ];
   return (
     <section className="flex justify-center items-center w-1/2 mx-auto my-12">
-      <div className="flex flex-wrap gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 sm:gap-x-36">
         {cardData.map((item) => (
           <div key={item.title}>
             <Card img={item.img} bg={item.bg} title={item.title} />

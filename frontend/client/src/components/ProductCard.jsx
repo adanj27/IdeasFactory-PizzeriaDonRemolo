@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pizza4Quesos, PizzaCalabresa } from '../assets';
+import { Pizza4Quesos, PizzaCalabresa, PizzaCaprese, PizzaFaina, PizzaFugazzeta, PizzaNapolitana, PizzaPalmitos, PizzaPanceta, PizzaProvolone } from '../assets';
 
 function ProductCard() {
   const products = [
@@ -13,21 +13,77 @@ function ProductCard() {
     },
     {
       id: 2,
+      img: PizzaFugazzeta,
+      title: 'Pizza Fugazzeta',
+      price: '$2100',
+      ofertPrice: '$1499',
+      description: 'Queso muzzarella y cebolla',
+    },
+    {
+      id: 2,
+      img: PizzaNapolitana,
+      title: 'Pizza Napolitana',
+      price: '$2100',
+      ofertPrice: '$1499',
+      description: 'Queso muzzarella, salsa de tomate y tomate en rodajas',
+    },
+    {
+      id: 2,
+      img: PizzaCaprese,
+      title: 'Pizza Caprese',
+      price: '$2400',
+      ofertPrice: '$1799',
+      description: 'Queso muzzarella, albahaca y tomate en rodajas',
+    },
+    {
+      id: 2,
       img: PizzaCalabresa,
       title: 'Pizza Calabresa',
       price: '$2300',
       ofertPrice: '$1699',
-      description: 'Queso muzzarella y salame',
+      description: 'Queso muzzarella y longaniza en rodajas',
+    },
+    {
+      id: 2,
+      img: PizzaPanceta,
+      title: 'Pizza Panceta',
+      price: '$3000',
+      ofertPrice: '$2700',
+      description: 'Salsa de tomate, muzzarella y panceta',
+    },
+    {
+      id: 2,
+      img: PizzaProvolone,
+      title: 'Pizza Provolone',
+      price: '$2000',
+      ofertPrice: '$1299',
+      description: 'Queso muzzarella y Provolone',
+    },
+    {
+      id: 2,
+      img: PizzaPalmitos,
+      title: 'Pizza Palmitos',
+      price: '$3200',
+      ofertPrice: '$3000',
+      description: 'Muzzarella, palmitos, salsa golf',
+    },
+    {
+      id: 2,
+      img: PizzaFaina,
+      title: 'Pizza Faina',
+      price: '$1700',
+      ofertPrice: '$1100',
+      description: 'Fainá sin acompañante',
     },
   ];
 
   return (
-    <div className="flex justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br px-2">
+    <div className="grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-8 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br px-2">
       {products.map(({
         id, img, title, description, price, ofertPrice,
       }) => (
-        <div key={id} className="w-full max-w-md  mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
-          <div className="max-w-md mx-auto">
+        <div key={id} className="w-full max-w-md mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
+          <div className="max-w-md mx-auto pb-10">
             <div className="w-full">
               <img src={img} alt="pizza" />
 
