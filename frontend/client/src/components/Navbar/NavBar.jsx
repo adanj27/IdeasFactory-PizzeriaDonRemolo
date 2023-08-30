@@ -30,6 +30,8 @@ function Navbar() {
             <img src="pizza.png" alt="logo2" className="h-16" />
           </div>
 
+          {/* Boton y barra de búsqueda */}
+
           <div className="w-full md:w-auto flex items-center space-x-auto mt-2 md:mt-0">
             {searchVisible && (
               <input
@@ -43,7 +45,7 @@ function Navbar() {
 
             <button
               type="button"
-              className="text-white hover:text-gray-300 p-1 bg-transparent focus:outline-none h-8"
+              className="text-white hover:text-gray-300 p-1 bg-transparent focus:outline-none h-8 hover:scale-110 duration-150"
               onClick={toggleSearch}
             >
               <img
@@ -53,7 +55,9 @@ function Navbar() {
               />
             </button>
 
-            <div className="ml-3">
+            {/* Boton y menu del carrito */}
+
+            <div className="ml-3 hover:scale-110 duration-150">
               <button
                 type="button"
                 className="text-black p-1 bg-transparent focus:outline-none border border-none rounded shadow-md h-8 w-20 md:w-24 flex items-center justify-center"
@@ -64,7 +68,6 @@ function Navbar() {
                   alt="carrito"
                   className="border-white mr-2 h-5"
                 />
-                <span>Carrito</span>
               </button>
             </div>
           </div>

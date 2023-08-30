@@ -11,4 +11,3 @@ export { default as PizzaPanceta } from './panceta.jpg';
 export { default as PizzaProvolone } from './provolone.jpg';
 export { default as PizzaPalmitos } from './palmitos.jpg';
 export { default as PizzaFaina } from './faina.jpg';
-
