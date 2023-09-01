@@ -1,4 +1,5 @@
 import React from 'react';
+// import { Link } from 'react-router-dom';
 import Card from './Card';
 import { Menu, Locales, Contacto } from '../assets';
 
@@ -28,7 +29,9 @@ function MenuCards() {
       <div className="flex flex-wrap gap-10">
         {cardData.map((item) => (
           <div key={item.title}>
+            {/* <Link to={item.to}> */}
             <Card img={item.img} bg={item.bg} title={item.title} />
+            {/* </Link> */}
           </div>
         ))}
       </div>
