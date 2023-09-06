@@ -79,8 +79,8 @@ export default function Carousel() {
             </button>
           </div>
           <div className="flex items-center">
-            <img src={img1} alt="pizza" className="w-96"/>
-            <img src={img2} alt="bebida" className="w-60"/>
+            <img src={img1} alt="pizza" className="w-96" />
+            <img src={img2} alt="bebida" className="w-60" />
           </div>
         </SwiperSlide>
       ))}
