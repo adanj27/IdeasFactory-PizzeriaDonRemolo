@@ -62,24 +62,26 @@ export default function Carousel() {
       {promos.map(({
         id, title, subtitle, description, img1, img2, price,
       }) => (
-        <SwiperSlide key={id}>
-          <h2 className="flex text-xl mt-10 ml-10 font-lato font-medium items-center text-right leading-10 text-white">
-            {title}
-          </h2>
-          <h1 className="flex text-3xl ml-10 font-lato font-medium items-center text-right leading-10 text-white">
-            {subtitle}
-          </h1>
-          <p className="inline-grid items-center ml-10 font-lato leading-8 font-light text-justify text-white ">
-            {description}
-          </p>
-          <h3 className="flex ml-10 font-extrabold text-white text-4xl">{price}</h3>
-          <div className="inline-flex mx-auto px-80 text-center w-full h-[200px]">
-            <img src={img1} alt="pizza" />
-            <img src={img2} alt="bebida" />
+        <SwiperSlide className="flex" key={id}>
+          <div className="w-1/2">
+            <h2 className="flex text-xl mt-10 ml-10 font-lato font-medium items-center text-right leading-10 text-white">
+              {title}
+            </h2>
+            <h1 className="flex text-3xl ml-10 font-lato font-medium items-center text-right leading-10 text-white">
+              {subtitle}
+            </h1>
+            <p className="inline-grid items-center ml-10 font-lato leading-8 font-light text-justify text-white ">
+              {description}
+            </p>
+            <h3 className="flex ml-10 font-extrabold text-white text-4xl">{price}</h3>
+            <button type="submit" className="text-black bg-white px-6 py-3 my-8 mx-auto flex items-start rounded-md hover:scale-110 duration-300">
+              Lo quiero!
+            </button>
           </div>
-          <button type="submit" className="text-black bg-white px-6 py-3 my-8 mx-auto flex items-start rounded-md hover:scale-110 duration-300">
-            Lo quiero!
-          </button>
+          <div className="flex items-center">
+            <img src={img1} alt="pizza" className="w-96"/>
+            <img src={img2} alt="bebida" className="w-60"/>
+          </div>
         </SwiperSlide>
       ))}
 
