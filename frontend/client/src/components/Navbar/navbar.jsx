@@ -11,7 +11,6 @@ function Navbar() {
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
-    // Aquí podrías realizar la lógica de búsqueda según el término ingresado
   };
 
   const addToCart = () => {
@@ -23,7 +22,11 @@ function Navbar() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap justify-between items-center">
           <div className="w-full md:w-auto flex items-center mb-2 md:mb-0">
-            <img src="Dom romulo.png" alt="logo1" className="h-16 md:h-20 mx-auto md:mx-0" />
+            <img
+              src="Dom romulo.png"
+              alt="logo1"
+              className="h-16 md:h-20 mx-auto md:mx-0"
+            />
             <img src="pizza.png" alt="logo2" className="h-16" />
           </div>
 
@@ -56,7 +59,11 @@ function Navbar() {
                 className="text-black p-1 bg-transparent focus:outline-none border border-none rounded shadow-md h-8 w-20 md:w-24 flex items-center justify-center"
                 onClick={addToCart}
               >
-                <img src="shopping_cart.png" alt="carrito" className="border-white mr-2 h-5" />
+                <img
+                  src="shopping_cart.png"
+                  alt="carrito"
+                  className="border-white mr-2 h-5"
+                />
                 <span>Carrito</span>
               </button>
             </div>
