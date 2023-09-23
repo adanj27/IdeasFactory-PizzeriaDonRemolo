@@ -1,45 +1,61 @@
 import React from 'react';
-import PropTypes from 'prop-types'; // Importa PropTypes
+import PropTypes from 'prop-types';
 
 function Navbar() {
-  // ... (código restante)
+  const navItems = ['Inicio', 'Pizzas', 'Empanadas', 'Contacto'];
+
+  return (
+    <nav className="bg-white p-4">
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        <div className="flex items-center">
+          <img
+            src="Dom romulo.png"
+            alt="logo1"
+            className="h-16 md:h-20 mx-auto md:mx-0"
+          />
+          <img src="pizza.png" alt="logo2" className="h-16" />
+        </div>
+
+        <div className="ml-3 flex">
+          {navItems.map((text) => (
+            <NavItem key={text} text={text} />
+          ))}
+          <CartButton />
+        </div>
+      </div>
+    </nav>
+  );
 }
 
 function NavItem({ text }) {
   return (
     <button
       type="button"
-      className="h-6 w-24 text-black border-none hover:bg-orange-500 rounded-lg"
+      className="h-7 w-24 text-black mx-2 border-none hover:bg-orange-500 rounded-lg"
     >
       {text}
     </button>
   );
 }
 
-// Agrega la validación de propiedades para NavItem
 NavItem.propTypes = {
-  text: PropTypes.string.isRequired, // Valida que 'text' sea una cadena y sea requerido
+  text: PropTypes.string.isRequired,
 };
 
 function CartButton() {
   return (
     <button
       type="button"
-      className="h-6 w-24 text-black border-none hover:bg-orange-500 rounded-lg flex items-center"
+      className="h-7 w-24 text-black mx-2 border-none hover:bg-orange-500 rounded-lg flex items-center"
     >
       Carrito
       <img
-        src="carrito.png"
+        src="compras.png"
         alt="carrito"
         className="h-4 ml-1"
       />
     </button>
   );
 }
-
-// Agrega la validación de propiedades para CartButton de la misma manera que NavItem
-CartButton.propTypes = {
-  // Si es necesario, agrega las props y validaciones necesarias aquí
-};
 
 export default Navbar;
