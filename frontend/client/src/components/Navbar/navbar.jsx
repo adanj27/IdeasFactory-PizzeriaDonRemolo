@@ -9,7 +9,7 @@ function NavItem({ text }) {
   return (
     <button
       type="button"
-      className="h-7 w-24 text-black border-none hover:bg-orange-500 rounded-lg"
+      className="h-6 w-24 text-black border-none hover:bg-orange-500 rounded-lg"
     >
       {text}
     </button>
@@ -25,7 +25,7 @@ function CartButton() {
   return (
     <button
       type="button"
-      className="h-7 w-24 text-black border-none hover:bg-orange-500 rounded-lg flex items-center"
+      className="h-6 w-24 text-black border-none hover:bg-orange-500 rounded-lg flex items-center"
     >
       Carrito
       <img
