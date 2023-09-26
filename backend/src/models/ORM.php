@@ -10,41 +10,46 @@ use App\DB\Sql;
 /**
  * ORM class that inherits from ConnectionDB
  */
-class ORM extends ConnectionDB {
+class ORM extends ConnectionDB
+{
     private $table;
     private $id;
     protected $db;
 
 
-    public function __construct($table, $id_table) {
+    public function __construct($table, $id_table)
+    {
 
         $this->table = $table;
         $this->id = $id_table;
         $this->db = ConnectionDB::getConnection();
     }
 
-    
-    public function create($data) {
+
+    public function create($data)
+    {
         // validation: Checks if the parameter values are empty
         foreach ($data as $value) {
-            if (empty($value)) return ['error' => 'Parameter values cannot be empty']; 
+            if (empty($value))
+                return ['error' => 'Parameter values cannot be empty'];
         }
-        $columns = implode(', ', array_keys($data));  
+        $columns = implode(', ', array_keys($data));
         $values = ':' . implode(', :', array_keys($data));
 
-        try{
+        try {
             $query = "INSERT INTO {$this->table} ({$columns}) VALUES ({$values})";
             $stmt = $this->db->prepare($query);
-    
+
             foreach ($data as $key => $value) {
                 $stmt->bindValue(':' . $key, $value);
             }
             $success = $stmt->execute();
             if ($stmt->rowCount() > 0) {
                 return ['message' => 'Record created successfully'];
-             } else return ['error' => 'Failed to create record'];
-        }catch(\PDOException $e){
-            error_log("ORM::create -> ".$e);
+            } else
+                return ['error' => 'Failed to create record'];
+        } catch (\PDOException $e) {
+            error_log("ORM::create -> " . $e);
             die(json_encode(ResponseHttp::status400('incorrect request')));
 
         }
@@ -55,14 +60,15 @@ class ORM extends ConnectionDB {
     /**
      * get all records in a table
      */
-    public function all(){
+    public function all()
+    {
         try {
             $query = $this->db->prepare("SELECT * FROM {$this->table}");
             $query->execute();
             $rs['data'] = $query->fetchAll(\PDO::FETCH_ASSOC);
             return $rs;
         } catch (\PDOException $e) {
-            error_log("ORM::all -> ".$e);
+            error_log("ORM::all -> " . $e);
             die(json_encode(ResponseHttp::status500('Unable to get the data')));
         }
     }
@@ -72,15 +78,16 @@ class ORM extends ConnectionDB {
     /**
      * get a record by id
      */
-    public function getById($id) {
+    public function getById($id)
+    {
         try {
             $query = $this->db->prepare("SELECT * FROM {$this->table} WHERE {$this->id} =:id");
             $query->execute(['id' => $id]);
             // Retorna el resultado o un mensaje si no se encuentra la categoria            
             $result = $query->fetch(\PDO::FETCH_ASSOC);
-            return $result ? ['data' => $result] : ['message' => "$this->table} not found" ];
+            return $result ? ['data' => $result] : ['message' => "$this->table} not found"];
         } catch (\PDOException $e) {
-            error_log("ORM::getById -> ".$e);
+            error_log("ORM::getById -> " . $e);
             die(json_encode(ResponseHttp::status500("Error fetching $this->table by ID")));
         }
     }
@@ -91,10 +98,12 @@ class ORM extends ConnectionDB {
      * update record 
      * @parameters : $id , $data
      */
-    public function update($id, $data)  {
-       // validation: Checks if the parameter values are empty
+    public function update($id, $data)
+    {
+        // validation: Checks if the parameter values are empty
         foreach ($data as $value) {
-            if (empty($value)) return ['error' => 'Parameter values cannot be empty'];
+            if (empty($value))
+                return ['error' => 'Parameter values cannot be empty'];
         }
         $columns = [];
         foreach ($data as $key => $value) {
@@ -102,22 +111,23 @@ class ORM extends ConnectionDB {
         }
         $columns = implode(', ', $columns);
 
-        try{
+        try {
             $query = "UPDATE {$this->table} SET {$columns} WHERE {$this->id} = :id";
             $stmt = $this->db->prepare($query);
-    
+
             foreach ($data as $key => $value) {
                 $stmt->bindValue(':' . $key, $value);
             }
             $stmt->bindValue(':id', $id);
-           $success = $stmt->execute();
+            $success = $stmt->execute();
 
-           if ($stmt->rowCount() > 0) {
-              return $this->getById($id);
-            } else return ['error' => 'Failed to update record'];
+            if ($stmt->rowCount() > 0) {
+                return $this->getById($id);
+            } else
+                return ['error' => 'Failed to update record'];
 
-        }catch (\PDOException $e) {
-            error_log("ORM::update -> ".$e);
+        } catch (\PDOException $e) {
+            error_log("ORM::update -> " . $e);
             die(json_encode(ResponseHttp::status400('incorrect request')));
         }
     }
@@ -129,24 +139,26 @@ class ORM extends ConnectionDB {
      * @parameters : $id 
      * 
      */
-    public function delete($id) {
+    public function delete($id)
+    {
         try {
             $query = $this->db->prepare("DELETE FROM {$this->table} WHERE {$this->id} = :id");
             $query->execute(['id' => $id]);
             $result = $query->fetch(\PDO::FETCH_ASSOC);
-            
+
             if ($query->rowCount() > 0) {
                 // successful deletion, return code 204 No Content
                 die(json_encode(ResponseHttp::status200("record deleted")));
                 return;
             } else {
-                die(json_encode(ResponseHttp::status400("incorrect request")));;
+                die(json_encode(ResponseHttp::status400("incorrect request")));
+                ;
                 return;
             }
         } catch (\PDOException $e) {
-            error_log("ORM::delete -> ".$e);
+            error_log("ORM::delete -> " . $e);
             throw new \PDOException("Error deleting record from {$this->table}: " . $e->getMessage());
         }
     }
-    
+
 }

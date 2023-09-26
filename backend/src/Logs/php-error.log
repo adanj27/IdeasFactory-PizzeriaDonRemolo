@@ -43,3 +43,337 @@ Stack trace:
 [23-Aug-2023 19:06:00 America/Bogota] Connection established with the database
 [23-Aug-2023 19:06:51 America/Bogota] Connection established with the database
 [23-Aug-2023 19:08:10 America/Bogota] Connection established with the database
+[25-Sep-2023 17:45:23 America/Bogota] Connection established with the database
+[25-Sep-2023 17:45:44 America/Bogota] Connection established with the database
+[25-Sep-2023 17:47:21 America/Bogota] Connection established with the database
+[25-Sep-2023 17:48:25 America/Bogota] Connection established with the database
+[25-Sep-2023 17:48:25 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Models\productModel::all() in C:\xampp\htdocs\backend\src\controllers\productController.php:38
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#1 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\backend\src\controllers\productController.php on line 38
+[25-Sep-2023 17:49:15 America/Bogota] Connection established with the database
+[25-Sep-2023 17:49:15 America/Bogota] Connection established with the database
+[25-Sep-2023 17:49:15 America/Bogota] productModel::getAllActiveProducts -> ArgumentCountError: Too few arguments to function App\Models\productModel::__construct(), 0 passed and exactly 1 expected in C:\xampp\htdocs\backend\src\models\productModel.php:26
+Stack trace:
+#0 [internal function]: App\Models\productModel->__construct()
+#1 C:\xampp\htdocs\backend\src\models\productModel.php(156): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#2 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#3 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#4 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#5 {main}
+
+Next PDOException: SQLSTATE[HY000]: General error: could not call class constructor in C:\xampp\htdocs\backend\src\models\productModel.php:156
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(156): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#2 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 17:54:40 America/Bogota] Connection established with the database
+[25-Sep-2023 17:54:40 America/Bogota] Connection established with the database
+[25-Sep-2023 17:54:40 America/Bogota] Connection established with the database
+[25-Sep-2023 17:54:40 America/Bogota] Connection established with the database
+[25-Sep-2023 17:54:40 America/Bogota] Connection established with the database
+[25-Sep-2023 17:56:23 America/Bogota] Connection established with the database
+[25-Sep-2023 17:56:23 America/Bogota] Connection established with the database
+[25-Sep-2023 17:56:23 America/Bogota] Connection established with the database
+[25-Sep-2023 17:56:23 America/Bogota] Connection established with the database
+[25-Sep-2023 17:56:23 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:10 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:10 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:10 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:10 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:10 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:25 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:25 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:25 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:25 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:25 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:58 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:58 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:58 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:58 America/Bogota] Connection established with the database
+[25-Sep-2023 17:59:58 America/Bogota] Connection established with the database
+[25-Sep-2023 18:08:01 America/Bogota] Connection established with the database
+[25-Sep-2023 18:08:01 America/Bogota] Connection established with the database
+[25-Sep-2023 18:08:01 America/Bogota] productModel::getAllActiveProducts -> ArgumentCountError: Too few arguments to function App\Models\productModel::__construct(), 0 passed and exactly 1 expected in C:\xampp\htdocs\backend\src\models\productModel.php:26
+Stack trace:
+#0 [internal function]: App\Models\productModel->__construct()
+#1 C:\xampp\htdocs\backend\src\models\productModel.php(158): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#2 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#3 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#4 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#5 {main}
+
+Next PDOException: SQLSTATE[HY000]: General error: could not call class constructor in C:\xampp\htdocs\backend\src\models\productModel.php:158
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(158): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#2 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:09:38 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Models\productModel::getById() in C:\xampp\htdocs\backend\src\controllers\productController.php:23
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\routes\product.php(23): App\Controllers\productController->getProductById(1)
+#1 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\backend\src\controllers\productController.php on line 23
+[25-Sep-2023 18:10:54 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Models\productModel::getConnection() in C:\xampp\htdocs\backend\src\models\productModel.php:109
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\controllers\productController.php(23): App\Models\productModel::getProductById(1)
+#1 C:\xampp\htdocs\backend\src\routes\product.php(23): App\Controllers\productController->getProductById(1)
+#2 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\backend\src\models\productModel.php on line 109
+[25-Sep-2023 18:12:08 America/Bogota] Connection established with the database
+[25-Sep-2023 18:12:08 America/Bogota] Connection established with the database
+[25-Sep-2023 18:12:34 America/Bogota] Connection established with the database
+[25-Sep-2023 18:12:34 America/Bogota] Connection established with the database
+[25-Sep-2023 18:12:34 America/Bogota] productModel::getAllActiveProducts -> ArgumentCountError: Too few arguments to function App\Models\productModel::__construct(), 0 passed and exactly 1 expected in C:\xampp\htdocs\backend\src\models\productModel.php:26
+Stack trace:
+#0 [internal function]: App\Models\productModel->__construct()
+#1 C:\xampp\htdocs\backend\src\models\productModel.php(158): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#2 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#3 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#4 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#5 {main}
+
+Next PDOException: SQLSTATE[HY000]: General error: could not call class constructor in C:\xampp\htdocs\backend\src\models\productModel.php:158
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(158): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#2 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:12:48 America/Bogota] Connection established with the database
+[25-Sep-2023 18:12:48 America/Bogota] Connection established with the database
+[25-Sep-2023 18:12:48 America/Bogota] productModel::getAllActiveProducts -> ArgumentCountError: Too few arguments to function App\Models\productModel::__construct(), 0 passed and exactly 1 expected in C:\xampp\htdocs\backend\src\models\productModel.php:26
+Stack trace:
+#0 [internal function]: App\Models\productModel->__construct()
+#1 C:\xampp\htdocs\backend\src\models\productModel.php(158): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#2 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#3 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#4 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#5 {main}
+
+Next PDOException: SQLSTATE[HY000]: General error: could not call class constructor in C:\xampp\htdocs\backend\src\models\productModel.php:158
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(158): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#2 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:13:36 America/Bogota] Connection established with the database
+[25-Sep-2023 18:13:36 America/Bogota] Connection established with the database
+[25-Sep-2023 18:15:52 America/Bogota] Connection established with the database
+[25-Sep-2023 18:15:52 America/Bogota] Connection established with the database
+[25-Sep-2023 18:15:52 America/Bogota] productModel::getAllActiveProducts -> ArgumentCountError: Too few arguments to function App\Models\productModel::__construct(), 0 passed and exactly 1 expected in C:\xampp\htdocs\backend\src\models\productModel.php:26
+Stack trace:
+#0 [internal function]: App\Models\productModel->__construct()
+#1 C:\xampp\htdocs\backend\src\models\productModel.php(158): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#2 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#3 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#4 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#5 {main}
+
+Next PDOException: SQLSTATE[HY000]: General error: could not call class constructor in C:\xampp\htdocs\backend\src\models\productModel.php:158
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(158): PDOStatement->fetchAll(8, 'App\\Models\\prod...')
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(38): App\Models\productModel::getAllActiveProducts()
+#2 C:\xampp\htdocs\backend\src\routes\product.php(27): App\Controllers\productController->getAllActiveProducts('product')
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:18:00 America/Bogota] Connection established with the database
+[25-Sep-2023 18:18:00 America/Bogota] Connection established with the database
+[25-Sep-2023 18:19:21 America/Bogota] Connection established with the database
+[25-Sep-2023 18:19:21 America/Bogota] Connection established with the database
+[25-Sep-2023 18:26:27 America/Bogota] Connection established with the database
+[25-Sep-2023 18:26:27 America/Bogota] Connection established with the database
+[25-Sep-2023 18:26:41 America/Bogota] Connection established with the database
+[25-Sep-2023 18:26:41 America/Bogota] Connection established with the database
+[25-Sep-2023 18:36:40 America/Bogota] Connection established with the database
+[25-Sep-2023 18:36:40 America/Bogota] Connection established with the database
+[25-Sep-2023 18:36:48 America/Bogota] Connection established with the database
+[25-Sep-2023 18:36:48 America/Bogota] Connection established with the database
+[25-Sep-2023 18:37:44 America/Bogota] Connection established with the database
+[25-Sep-2023 18:37:44 America/Bogota] Connection established with the database
+[25-Sep-2023 18:44:17 America/Bogota] Connection established with the database
+[25-Sep-2023 18:44:17 America/Bogota] Connection established with the database
+[25-Sep-2023 18:44:17 America/Bogota] productModel::getProductById -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.category_name' in 'field list' in C:\xampp\htdocs\backend\src\models\productModel.php:119
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(119): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(20): App\Models\productModel::getProductById(1)
+#2 C:\xampp\htdocs\backend\src\routes\product.php(21): App\Controllers\productController->getProductById(1)
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:44:21 America/Bogota] Connection established with the database
+[25-Sep-2023 18:44:21 America/Bogota] Connection established with the database
+[25-Sep-2023 18:44:21 America/Bogota] productModel::getProductById -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.category_name' in 'field list' in C:\xampp\htdocs\backend\src\models\productModel.php:119
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(119): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(20): App\Models\productModel::getProductById(2)
+#2 C:\xampp\htdocs\backend\src\routes\product.php(21): App\Controllers\productController->getProductById(2)
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:45:29 America/Bogota] Connection established with the database
+[25-Sep-2023 18:45:29 America/Bogota] Connection established with the database
+[25-Sep-2023 18:45:29 America/Bogota] productModel::getProductById -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.category_name' in 'field list' in C:\xampp\htdocs\backend\src\models\productModel.php:119
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(119): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(20): App\Models\productModel::getProductById(2)
+#2 C:\xampp\htdocs\backend\src\routes\product.php(21): App\Controllers\productController->getProductById(2)
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:49:43 America/Bogota] Connection established with the database
+[25-Sep-2023 18:49:43 America/Bogota] Connection established with the database
+[25-Sep-2023 18:49:43 America/Bogota] productModel::getProductById -> PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\backend\src\models\productModel.php:119
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(119): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(20): App\Models\productModel::getProductById(2)
+#2 C:\xampp\htdocs\backend\src\routes\product.php(21): App\Controllers\productController->getProductById(2)
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:49:49 America/Bogota] Connection established with the database
+[25-Sep-2023 18:49:49 America/Bogota] Connection established with the database
+[25-Sep-2023 18:51:57 America/Bogota] Connection established with the database
+[25-Sep-2023 18:51:57 America/Bogota] Connection established with the database
+[25-Sep-2023 18:51:57 America/Bogota] productModel::getProductById -> PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\backend\src\models\productModel.php:119
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(119): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(20): App\Models\productModel::getProductById(2)
+#2 C:\xampp\htdocs\backend\src\routes\product.php(21): App\Controllers\productController->getProductById(2)
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:53:38 America/Bogota] Connection established with the database
+[25-Sep-2023 18:53:38 America/Bogota] Connection established with the database
+[25-Sep-2023 18:53:38 America/Bogota] productModel::getProductById -> PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\backend\src\models\productModel.php:119
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(119): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(20): App\Models\productModel::getProductById(2)
+#2 C:\xampp\htdocs\backend\src\routes\product.php(21): App\Controllers\productController->getProductById(2)
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:54:59 America/Bogota] Connection established with the database
+[25-Sep-2023 18:54:59 America/Bogota] Connection established with the database
+[25-Sep-2023 18:54:59 America/Bogota] productModel::getAllActiveProducts -> PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':id AND p.product_status = 1' at line 4 in C:\xampp\htdocs\backend\src\models\productModel.php:157
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\productModel.php(157): PDOStatement->execute()
+#1 C:\xampp\htdocs\backend\src\controllers\productController.php(36): App\Models\productModel::getAllActiveProducts()
+#2 C:\xampp\htdocs\backend\src\routes\product.php(25): App\Controllers\productController->getAllActiveProducts('product')
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 18:56:03 America/Bogota] Connection established with the database
+[25-Sep-2023 18:56:03 America/Bogota] Connection established with the database
+[25-Sep-2023 18:57:51 America/Bogota] Connection established with the database
+[25-Sep-2023 18:57:51 America/Bogota] Connection established with the database
+[25-Sep-2023 19:17:31 America/Bogota] Connection established with the database
+[25-Sep-2023 19:17:31 America/Bogota] Connection established with the database
+[25-Sep-2023 19:17:35 America/Bogota] Connection established with the database
+[25-Sep-2023 19:17:35 America/Bogota] Connection established with the database
+[25-Sep-2023 19:17:41 America/Bogota] Connection established with the database
+[25-Sep-2023 19:17:41 America/Bogota] Connection established with the database
+[25-Sep-2023 19:17:41 America/Bogota] ComboModel::getAllCombos -> ArgumentCountError: Too few arguments to function App\Models\ComboModel::__construct(), 0 passed and exactly 1 expected in C:\xampp\htdocs\backend\src\models\comboModel.php:14
+Stack trace:
+#0 [internal function]: App\Models\ComboModel->__construct()
+#1 C:\xampp\htdocs\backend\src\models\comboModel.php(75): PDOStatement->fetchAll(8, 'App\\Models\\Comb...')
+#2 C:\xampp\htdocs\backend\src\controllers\comboController.php(24): App\Models\ComboModel::getAllCombos()
+#3 C:\xampp\htdocs\backend\src\routes\combo.php(26): App\Controllers\ComboController->getAllCombos('combo')
+#4 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#5 {main}
+
+Next PDOException: SQLSTATE[HY000]: General error: could not call class constructor in C:\xampp\htdocs\backend\src\models\comboModel.php:75
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\comboModel.php(75): PDOStatement->fetchAll(8, 'App\\Models\\Comb...')
+#1 C:\xampp\htdocs\backend\src\controllers\comboController.php(24): App\Models\ComboModel::getAllCombos()
+#2 C:\xampp\htdocs\backend\src\routes\combo.php(26): App\Controllers\ComboController->getAllCombos('combo')
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 19:17:48 America/Bogota] Connection established with the database
+[25-Sep-2023 19:17:48 America/Bogota] Connection established with the database
+[25-Sep-2023 19:17:48 America/Bogota] ComboModel::getAllCombos -> ArgumentCountError: Too few arguments to function App\Models\ComboModel::__construct(), 0 passed and exactly 1 expected in C:\xampp\htdocs\backend\src\models\comboModel.php:14
+Stack trace:
+#0 [internal function]: App\Models\ComboModel->__construct()
+#1 C:\xampp\htdocs\backend\src\models\comboModel.php(75): PDOStatement->fetchAll(8, 'App\\Models\\Comb...')
+#2 C:\xampp\htdocs\backend\src\controllers\comboController.php(24): App\Models\ComboModel::getAllCombos()
+#3 C:\xampp\htdocs\backend\src\routes\combo.php(26): App\Controllers\ComboController->getAllCombos('combo')
+#4 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#5 {main}
+
+Next PDOException: SQLSTATE[HY000]: General error: could not call class constructor in C:\xampp\htdocs\backend\src\models\comboModel.php:75
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\comboModel.php(75): PDOStatement->fetchAll(8, 'App\\Models\\Comb...')
+#1 C:\xampp\htdocs\backend\src\controllers\comboController.php(24): App\Models\ComboModel::getAllCombos()
+#2 C:\xampp\htdocs\backend\src\routes\combo.php(26): App\Controllers\ComboController->getAllCombos('combo')
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 19:18:35 America/Bogota] Connection established with the database
+[25-Sep-2023 19:18:35 America/Bogota] Connection established with the database
+[25-Sep-2023 19:18:35 America/Bogota] ComboModel::getAllCombos -> ArgumentCountError: Too few arguments to function App\Models\ComboModel::__construct(), 0 passed and exactly 1 expected in C:\xampp\htdocs\backend\src\models\comboModel.php:14
+Stack trace:
+#0 [internal function]: App\Models\ComboModel->__construct()
+#1 C:\xampp\htdocs\backend\src\models\comboModel.php(75): PDOStatement->fetchAll(8, 'App\\Models\\Comb...')
+#2 C:\xampp\htdocs\backend\src\controllers\comboController.php(24): App\Models\ComboModel::getAllCombos()
+#3 C:\xampp\htdocs\backend\src\routes\combo.php(26): App\Controllers\ComboController->getAllCombos('combo')
+#4 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#5 {main}
+
+Next PDOException: SQLSTATE[HY000]: General error: could not call class constructor in C:\xampp\htdocs\backend\src\models\comboModel.php:75
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\comboModel.php(75): PDOStatement->fetchAll(8, 'App\\Models\\Comb...')
+#1 C:\xampp\htdocs\backend\src\controllers\comboController.php(24): App\Models\ComboModel::getAllCombos()
+#2 C:\xampp\htdocs\backend\src\routes\combo.php(26): App\Controllers\ComboController->getAllCombos('combo')
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 19:18:39 America/Bogota] Connection established with the database
+[25-Sep-2023 19:18:39 America/Bogota] Connection established with the database
+[25-Sep-2023 19:20:51 America/Bogota] Connection established with the database
+[25-Sep-2023 19:20:51 America/Bogota] Connection established with the database
+[25-Sep-2023 19:20:51 America/Bogota] PHP Warning:  Array to string conversion in C:\xampp\htdocs\backend\src\models\comboModel.php on line 78
+[25-Sep-2023 19:20:51 America/Bogota] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\backend\src\models\comboModel.php on line 78
+[25-Sep-2023 19:21:02 America/Bogota] Connection established with the database
+[25-Sep-2023 19:21:02 America/Bogota] Connection established with the database
+[25-Sep-2023 19:21:20 America/Bogota] Connection established with the database
+[25-Sep-2023 19:21:20 America/Bogota] Connection established with the database
+[25-Sep-2023 19:23:35 America/Bogota] Connection established with the database
+[25-Sep-2023 19:23:35 America/Bogota] Connection established with the database
+[25-Sep-2023 19:23:39 America/Bogota] Connection established with the database
+[25-Sep-2023 19:23:39 America/Bogota] Connection established with the database
+[25-Sep-2023 19:23:48 America/Bogota] Connection established with the database
+[25-Sep-2023 19:23:48 America/Bogota] Connection established with the database
+[25-Sep-2023 19:24:18 America/Bogota] Connection established with the database
+[25-Sep-2023 19:24:18 America/Bogota] Connection established with the database
+[25-Sep-2023 19:24:22 America/Bogota] Connection established with the database
+[25-Sep-2023 19:24:22 America/Bogota] Connection established with the database
+[25-Sep-2023 20:12:01 America/Bogota] Connection established with the database
+[25-Sep-2023 20:12:01 America/Bogota] Connection established with the database
+[25-Sep-2023 20:12:36 America/Bogota] Connection established with the database
+[25-Sep-2023 20:12:36 America/Bogota] Connection established with the database
+[25-Sep-2023 20:14:05 America/Bogota] Connection established with the database
+[25-Sep-2023 20:14:05 America/Bogota] Connection established with the database
+[25-Sep-2023 20:14:26 America/Bogota] Connection established with the database
+[25-Sep-2023 20:14:26 America/Bogota] Connection established with the database
+[25-Sep-2023 20:14:29 America/Bogota] Connection established with the database
+[25-Sep-2023 20:14:29 America/Bogota] Connection established with the database
+[25-Sep-2023 20:15:10 America/Bogota] Connection established with the database
+[25-Sep-2023 20:15:10 America/Bogota] Connection established with the database
+[25-Sep-2023 20:15:17 America/Bogota] Connection established with the database
+[25-Sep-2023 20:15:17 America/Bogota] Connection established with the database
+[25-Sep-2023 20:15:34 America/Bogota] Connection established with the database
+[25-Sep-2023 20:15:34 America/Bogota] Connection established with the database
+[25-Sep-2023 20:15:34 America/Bogota] ComboModel::deactivateCombo -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'combo_status' in 'field list' in C:\xampp\htdocs\backend\src\models\comboModel.php:132
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\models\comboModel.php(132): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\backend\src\controllers\comboController.php(64): App\Models\ComboModel->deactivateCombo(3)
+#2 C:\xampp\htdocs\backend\src\routes\combo.php(38): App\Controllers\ComboController->deactivateCombo(3)
+#3 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+[25-Sep-2023 20:19:06 America/Bogota] Connection established with the database
+[25-Sep-2023 20:19:06 America/Bogota] Connection established with the database
+[25-Sep-2023 20:19:32 America/Bogota] Connection established with the database
+[25-Sep-2023 20:19:32 America/Bogota] Connection established with the database
+[25-Sep-2023 20:19:36 America/Bogota] Connection established with the database
+[25-Sep-2023 20:19:36 America/Bogota] Connection established with the database
+[25-Sep-2023 20:19:38 America/Bogota] Connection established with the database
+[25-Sep-2023 20:19:38 America/Bogota] Connection established with the database
