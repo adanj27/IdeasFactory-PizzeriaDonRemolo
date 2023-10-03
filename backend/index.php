@@ -15,7 +15,7 @@ Errorlog::activateErrorLog();
 if (isset($_GET['route'])) {
 
     $url = explode('/', $_GET['route']);
-    $lista = ['product','category','combo']; //Contains the routes that are to be allowed
+    $lista = ['product','category','combo','order']; //Contains the routes that are to be allowed
     //Find the folders where our routes are
     $file = 'src/Routes/' .$url[0]. '.php';
 
