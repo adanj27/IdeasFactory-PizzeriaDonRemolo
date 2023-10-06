@@ -421,3 +421,69 @@ Stack trace:
 [30-Sep-2023 19:15:46 America/Bogota] OrderModel::getOrderById -> PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order o
                 WHERE o.id_order = '1' AND o.order_status = 1' at line 1 in C:\xampp\htdocs\dashboard\project_pizzeria\IdeasFactory-PizzeriaDonRemolo\backend\src\models\OrderModel.php:72
 
+[06-Oct-2023 17:43:08 America/Bogota] Connection established with the database
+[06-Oct-2023 17:43:08 America/Bogota] Connection established with the database
+[06-Oct-2023 17:50:46 America/Bogota] Connection established with the database
+[06-Oct-2023 17:50:46 America/Bogota] Connection established with the database
+[06-Oct-2023 17:52:36 America/Bogota] Connection established with the database
+[06-Oct-2023 17:52:55 America/Bogota] Connection established with the database
+[06-Oct-2023 17:53:01 America/Bogota] Connection established with the database
+[06-Oct-2023 17:53:07 America/Bogota] Connection established with the database
+[06-Oct-2023 17:55:50 America/Bogota] Connection established with the database
+[06-Oct-2023 18:00:27 America/Bogota] Connection established with the database
+[06-Oct-2023 18:01:43 America/Bogota] Connection established with the database
+[06-Oct-2023 18:02:11 America/Bogota] Connection established with the database
+[06-Oct-2023 18:02:13 America/Bogota] Connection established with the database
+[06-Oct-2023 18:07:06 America/Bogota] Connection established with the database
+[06-Oct-2023 18:07:06 America/Bogota] Connection established with the database
+[06-Oct-2023 18:10:02 America/Bogota] Connection established with the database
+[06-Oct-2023 18:10:02 America/Bogota] Connection established with the database
+[06-Oct-2023 18:10:17 America/Bogota] Connection established with the database
+[06-Oct-2023 18:10:17 America/Bogota] Connection established with the database
+[06-Oct-2023 18:10:26 America/Bogota] Connection established with the database
+[06-Oct-2023 18:10:26 America/Bogota] Connection established with the database
+[06-Oct-2023 18:10:37 America/Bogota] Connection established with the database
+[06-Oct-2023 18:10:37 America/Bogota] Connection established with the database
+[06-Oct-2023 18:12:20 America/Bogota] Connection established with the database
+[06-Oct-2023 18:12:20 America/Bogota] Connection established with the database
+[06-Oct-2023 18:12:34 America/Bogota] Connection established with the database
+[06-Oct-2023 18:12:34 America/Bogota] Connection established with the database
+[06-Oct-2023 18:14:37 America/Bogota] Connection established with the database
+[06-Oct-2023 18:14:37 America/Bogota] Connection established with the database
+[06-Oct-2023 18:22:05 America/Bogota] Connection established with the database
+[06-Oct-2023 18:22:05 America/Bogota] Connection established with the database
+[06-Oct-2023 18:22:09 America/Bogota] Connection established with the database
+[06-Oct-2023 18:22:09 America/Bogota] Connection established with the database
+[06-Oct-2023 18:22:14 America/Bogota] Connection established with the database
+[06-Oct-2023 18:22:14 America/Bogota] Connection established with the database
+[06-Oct-2023 18:22:28 America/Bogota] Connection established with the database
+[06-Oct-2023 18:25:09 America/Bogota] Connection established with the database
+[06-Oct-2023 18:25:09 America/Bogota] PHP Fatal error:  Uncaught TypeError: App\Config\ResponseHttp::status200(): Argument #1 ($message) must be of type string, array given, called in C:\xampp\htdocs\backend\src\controllers\CategoryController.php on line 72 and defined in C:\xampp\htdocs\backend\src\config\ResponseHttp.php:8
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\controllers\CategoryController.php(72): App\Config\ResponseHttp::status200(Array)
+#1 C:\xampp\htdocs\backend\src\routes\category.php(27): App\Controllers\CategoryController->getAll('category')
+#2 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\backend\src\config\ResponseHttp.php on line 8
+[06-Oct-2023 18:26:52 America/Bogota] Connection established with the database
+[06-Oct-2023 18:26:52 America/Bogota] PHP Fatal error:  Uncaught TypeError: App\Config\ResponseHttp::status200(): Argument #1 ($message) must be of type string, array given, called in C:\xampp\htdocs\backend\src\controllers\CategoryController.php on line 51 and defined in C:\xampp\htdocs\backend\src\config\ResponseHttp.php:8
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\controllers\CategoryController.php(51): App\Config\ResponseHttp::status200(Array)
+#1 C:\xampp\htdocs\backend\src\routes\category.php(23): App\Controllers\CategoryController->getCategoryById('3')
+#2 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\backend\src\config\ResponseHttp.php on line 8
+[06-Oct-2023 18:29:00 America/Bogota] Connection established with the database
+[06-Oct-2023 18:29:00 America/Bogota] PHP Fatal error:  Uncaught TypeError: App\Config\ResponseHttp::status200(): Argument #1 ($message) must be of type string, array given, called in C:\xampp\htdocs\backend\src\controllers\CategoryController.php on line 63 and defined in C:\xampp\htdocs\backend\src\config\ResponseHttp.php:8
+Stack trace:
+#0 C:\xampp\htdocs\backend\src\controllers\CategoryController.php(63): App\Config\ResponseHttp::status200(Array)
+#1 C:\xampp\htdocs\backend\src\routes\category.php(27): App\Controllers\CategoryController->getAll('category')
+#2 C:\xampp\htdocs\backend\index.php(28): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\backend\src\config\ResponseHttp.php on line 8
+[06-Oct-2023 18:29:33 America/Bogota] Connection established with the database
+[06-Oct-2023 18:29:36 America/Bogota] Connection established with the database
+[06-Oct-2023 18:29:44 America/Bogota] Connection established with the database
+[06-Oct-2023 18:29:53 America/Bogota] Connection established with the database
+[06-Oct-2023 18:30:55 America/Bogota] Connection established with the database
+[06-Oct-2023 18:30:55 America/Bogota] Connection established with the database
