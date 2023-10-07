@@ -7,7 +7,7 @@ use App\Models\ORM;
 /**
  * FoodModel class that inherits from ORM
  */
-class productModel extends ORM
+class ProductModel extends ORM
 {
     // Class properties
     protected $table = 'products';

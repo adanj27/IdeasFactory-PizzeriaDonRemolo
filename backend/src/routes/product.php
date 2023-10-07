@@ -1,6 +1,6 @@
 <?php
 use App\Config\ResponseHttp;
-use App\Controllers\productController;
+use App\Controllers\ProductController;
 
 /**
  * Obtiene la ruta de la solicitud
@@ -10,7 +10,7 @@ $params = explode('/', $_GET['route']);
 /**
  * Crea una instancia de productController
  */
-$app = new productController();
+$app = new ProductController();
 
 /**
  * Rutas
@@ -26,13 +26,11 @@ if ($params[0] === 'product') {
     }
     // Crear un nuevo producto
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $data = json_decode(file_get_contents('php://input'), true);
-        $app->createProduct($data);
+        $app->createProduct();
     }
     // Actualizar un producto por ID
     if ($_SERVER['REQUEST_METHOD'] === 'PUT' && isset($params[1]) && is_numeric($params[1])) {
-        $data = json_decode(file_get_contents('php://input'), true);
-        $app->updateProduct($params[1], $data);
+        $app->updateProduct($params[1]);
     }
     // Desactivar un producto por ID (Modificar product_status a 0)
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE' && isset($params[1]) && is_numeric($params[1])) {

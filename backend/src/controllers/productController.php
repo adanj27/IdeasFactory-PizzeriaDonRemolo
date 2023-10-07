@@ -3,9 +3,9 @@
 namespace App\Controllers;
 
 use App\Config\ResponseHttp;
-use App\Models\productModel;
+use App\Models\ProductModel;
 
-class productController extends BaseController
+class ProductController extends BaseController
 {
     /**
      * Obtener un producto por ID
