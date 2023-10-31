@@ -8,6 +8,7 @@ function MenuCards() {
     {
       img: Menu,
       bg: 'bg-[#FF8333]',
+      bg2: 'bg-white',
       title: 'MENÚ',
       to: '/menu',
     },

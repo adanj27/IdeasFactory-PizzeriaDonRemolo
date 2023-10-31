@@ -17,7 +17,7 @@ function Navbar() {
           <img src="pizza.png" alt="logo2" className="h-16" />
         </div>
 
-        <div className="ml-3 flex">
+        <div className="ml-3 flex text-lg font-medium">
 
           {navItems.map((text) => (
             <NavItem key={text} text={text} />
