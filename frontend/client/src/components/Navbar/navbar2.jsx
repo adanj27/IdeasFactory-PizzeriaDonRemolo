@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 
 function Navbar() {
@@ -42,7 +43,6 @@ function NavItem({ text }) {
 NavItem.propTypes = {
   text: PropTypes.string.isRequired,
 };
-
 
 function CartButton() {
   return (
