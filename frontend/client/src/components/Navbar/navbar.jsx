@@ -17,6 +17,7 @@ function Navbar() {
         </div>
 
         <div className="ml-3 flex">
+          
           {navItems.map((text) => (
             <NavItem key={text} text={text} />
           ))}
