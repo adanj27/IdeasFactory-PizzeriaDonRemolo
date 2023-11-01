@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-white py-4 text-center absolute w-full bottom-0 mt-4">
+    <footer className="bg-white py-4 text-center flex w-full bottom-0 mt-4">
       <div className="container mx-auto">
         <div className="mb-3.5">
           <img src="Facebook.svg" alt="logoFacebook" className="h-5 inline-block mr-4" />

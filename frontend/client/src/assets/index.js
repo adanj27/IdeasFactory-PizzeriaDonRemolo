@@ -5,3 +5,6 @@ export { default as CocaChica } from './coca.png';
 export { default as PizzaCalabresa } from './pizza-menu-carrousel.png';
 export { default as BgMenuBar } from './background-2nd-navbar.png';
 export { default as BgCarrousel } from './bg-carrousel.png';
+export { default as BgCarrousel2 } from './bgimage2.png';
+export { default as BgCarrousel3 } from './bgimage3.png';
+export { default as Logo } from './LogoPizza.png';
