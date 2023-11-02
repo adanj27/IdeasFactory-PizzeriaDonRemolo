@@ -1,21 +1,39 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
-  const navItems = ['Inicio', 'Pizzas', 'Empanadas', 'Contacto'];
+  const navItems = [
+    {
+      text: 'Inicio',
+      href: '/',
+    },
+    {
+      text: 'Pizzas',
+      href: 'pizzas',
+    },
+    {
+      text: 'Empanadas',
+      href: 'empanadas',
+    },
+    {
+      text: 'Contacto',
+      href: 'contacto',
+    },
+  ];
 
   return (
     <nav className="bg-white p-3">
-      <div className="mx-auto flex justify-between items-center">
+      <div className="flex justify-between items-center text-center">
         <div className="flex items-center">
           <img src="Dom romulo.png" alt="logo1" className="h-16 md:h-20 mx-auto md:mx-0" />
           <img src="pizza.png" alt="logo2" className="h-16" />
         </div>
 
         <div className="flex text-lg font-[450px] font-display -translate-x-36">
-          {navItems.map((text) => (
-            <NavItem key={text} text={text} />
+          {navItems.map(({ text, href }) => (
+            <NavItem key={text} text={text} href={href} />
           ))}
         </div>
 
@@ -27,16 +45,17 @@ function Navbar() {
   );
 }
 
-function NavItem({ text }) {
+function NavItem({ href, text }) {
   return (
-    <button type="button" className="w-28 h-10 text-black mx-4 hover:bg-[#CF5100A6] rounded-2xl shadow-md">
+    <Link to={href} className="w-28 h-10 text-center pt-1 text-black mx-4 hover:bg-[#CF5100A6] rounded-2xl shadow-md">
       {text}
-    </button>
+    </Link>
   );
 }
 
 NavItem.propTypes = {
   text: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
 };
 
 function CartButton() {

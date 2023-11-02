@@ -3,6 +3,8 @@ export { default as Locales } from './Locales.png';
 export { default as Contacto } from './Contacto.png';
 export { default as CocaChica } from './coca.png';
 export { default as PizzaCalabresa } from './pizza-menu-carrousel.png';
+export { default as Pizza4Quesos } from '../../public/pizza-4-quesos.png';
+export { default as Muzzarella } from './muzzarella.png';
 export { default as BgMenuBar } from './background-2nd-navbar.png';
 export { default as BgCarrousel } from './bg-carrousel.png';
 export { default as BgCarrousel2 } from './bgimage2.png';

@@ -1,20 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
-
-function BrowserRoutes() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/Home" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+import Pizzas from '../pages/Pizzas';
+import Empanadas from '../pages/Empanadas';
+import { Contacto } from '../assets';
 
 function Router() {
   return (
-    <BrowserRoutes />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pizzas" element={<Pizzas />} />
+        <Route path="/empanadas" element={<Empanadas />} />
+        <Route path="/contacto" element={<Contacto />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
