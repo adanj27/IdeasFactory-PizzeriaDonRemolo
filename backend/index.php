@@ -4,6 +4,7 @@ use App\Config\Errorlog;
 use App\Config\ResponseHttp;
 
 require 'vendor/autoload.php';
+
 /**
  *All php errors will be saved in the php-error.log file
  */
