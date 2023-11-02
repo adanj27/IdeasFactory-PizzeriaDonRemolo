@@ -60,7 +60,7 @@ NavItem.propTypes = {
 
 function CartButton() {
   return (
-    <button type="button" className="h-12 w-12 p-2 text-black hover:bg-[#CF5100A6] rounded-2xl shadow-md">
+    <button type="submit" className="h-12 w-12 p-2 text-orange hover:bg-[#CF5100A6] rounded-2xl shadow-md">
       <img src="compras.png" alt="carrito" className="p-1" />
     </button>
   );

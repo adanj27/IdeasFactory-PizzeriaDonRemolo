@@ -1,80 +1,88 @@
 import React from 'react';
 import {
-  Pizza4Quesos,
-  PizzaCalabresa,
-  Muzzarella,
-  PizzaPalmitos,
-  PizzaFugazzeta,
-  PizzaNapolitana,
-  PizzaPanceta,
-  PizzaProvolone,
-  PizzaFaina,
+  CarneSuave,
+  CarneMalbec,
+  CarnePicante,
+  Humita,
+  Pollo,
+  Verdura,
+  PancetaCiruela,
+  JyQ,
+  Roquefort,
+  Caprese,
 } from '../assets';
 
-function ProductCard() {
+function EmpanadasCards() {
   const pizzas = [
     {
-      img: Pizza4Quesos,
-      title: 'Pizza Cuatro Quesos',
+      img: CarneSuave,
+      title: 'Carne Suave',
       price: '$2500',
       ofertPrice: '$1899',
-      description: 'Provolone, Roquefort y Parmesano',
+      description: 'Nuestras clasicas empanadas de carne',
     },
     {
-      img: Muzzarella,
-      title: 'Pizza Fugazzeta',
+      img: CarnePicante,
+      title: 'Carne picante',
       price: '$2100',
       ofertPrice: '$1499',
-      description: 'Queso muzzarella y cebolla',
+      description: 'Picante moderado, carne triturada',
     },
     {
-      img: PizzaNapolitana,
-      title: 'Pizza Napolitana',
+      img: CarneMalbec,
+      title: 'Carne al malbec',
       price: '$2100',
       ofertPrice: '$1499',
-      description: 'Salsa de tomate, tomates y albahaca',
+      description: 'Carne cortada a cuchillo al malbeec',
     },
     {
-      img: PizzaFugazzeta,
-      title: 'Pizza Fugazzeta',
+      img: JyQ,
+      title: 'Jamon y queso',
       price: '$2400',
       ofertPrice: '$1799',
-      description: 'Cebolla y provolone gratinado',
+      description: 'Jamon en lonjas con muzzarella',
     },
     {
-      img: PizzaCalabresa,
-      title: 'Pizza Calabresa',
+      img: Roquefort,
+      title: 'Roquefort',
       price: '$2300',
       ofertPrice: '$1699',
-      description: 'Longanizas en rodajas',
+      description: 'Roquefort y jamón',
     },
     {
-      img: PizzaPanceta,
-      title: 'Pizza Panceta',
+      img: Caprese,
+      title: 'Capresse',
       price: '$3000',
       ofertPrice: '$2700',
-      description: 'Salsa de tomate, queso y panceta',
+      description: 'Queso, tomate y albahaca',
     },
     {
-      img: PizzaProvolone,
-      title: 'Pizza Provolone',
+      img: Humita,
+      title: 'Humita',
       price: '$2000',
       ofertPrice: '$1299',
-      description: 'Queso Provolone con aceitunas negras',
+      description: 'Salsa blanca y choclo',
     },
     {
-      img: PizzaPalmitos,
-      title: 'Pizza Palmitos',
+      img: PancetaCiruela,
+      title: 'Panceta y Ciruela',
       price: '$3200',
       ofertPrice: '$3000',
-      description: 'Palmitos, salsa golf y huevo',
+      description: 'Panceta, queso y ciruela',
     },
     {
-      img: PizzaFaina,
-      title: 'Pizza Faina',
+      img: Pollo,
+      title: 'Pollo clásicas',
       price: '$2000',
       ofertPrice: '$1800',
-      description: 'Fainá sin acompañantes',
+      description: 'Pollo y salsa especial de la casa',
+    },
+    {
+      img: Verdura,
+      title: 'Verdura',
+      price: '$2000',
+      ofertPrice: '$1800',
+      description: 'Espinaca fresca y muzzarella',
     },
   ];
 
@@ -126,9 +134,8 @@ function ProductCard() {
           </div>
         </div>
       ))}
-      <p className="font-display font-medium text-sm">* Todas las pizzas vienen con queso Muzzarella de primera calidad</p>
     </div>
   );
 }
 
-export default ProductCard;
+export default EmpanadasCards;

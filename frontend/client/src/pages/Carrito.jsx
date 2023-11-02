@@ -1,16 +1,16 @@
 import React from 'react';
 import Navbar from '../components/Navbar/navbar2';
 import Footer from '../components/footer/footer';
-import EmpanadasCards from '../components/EmpanadasCards';
+import ShoppingCart from '../components/ShoppingCart';
 
-function Empanadas() {
+function Carrito() {
   return (
     <>
       <Navbar />
-      <EmpanadasCards />
+      <ShoppingCart />
       <Footer />
     </>
   );
 }
 
-export default Empanadas;
+export default Carrito;
