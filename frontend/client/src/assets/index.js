@@ -9,7 +9,7 @@ export { default as PizzaNapolitana } from './pizza-napolitana.jpg';
 export { default as PizzaPalmitos } from './pizza-palmitos.jpg';
 export { default as PizzaPanceta } from './pizza-panceta.jpg';
 export { default as PizzaProvolone } from './pizza-provolone.jpg';
-export { default as Pizza4Quesos } from '../../public/pizza-4-quesos.png';
+export { default as Pizza4Quesos } from './pizza-4-quesos.png';
 export { default as Caprese } from './capresee.png';
 export { default as CarneSuave } from './carne-suave.jpg';
 export { default as CarnePicante } from './carne-picante.jpg';

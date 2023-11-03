@@ -102,7 +102,7 @@ function ProductCard() {
                   className="inline font-medium text-sm font-display tracking-wide text-center transition-colors duration-200 transform rounded-full hover:bg-[#CF5100] p-1"
                   rel="noreferrer"
                 >
-                  Completa
+                  -
                 </a>
                 <a
                   target="_blank"
@@ -110,7 +110,7 @@ function ProductCard() {
                   className="inline font-medium font-display text-sm tracking-wide text-center transition-colors duration-300 transform rounded-full p-1 hover:bg-[#CF5100] hover:text-[#000000dd] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80"
                   rel="noreferrer"
                 >
-                  Porción
+                  +
                 </a>
               </div>
 
