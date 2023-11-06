@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable object-curly-newline */
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useState } from 'react';
@@ -15,6 +16,7 @@ import {
 } from '../assets';
 
 function EmpanadasCards() {
+  const [carrito, setCarrito] = useState([]);
   const [menu, setMenu] = useState([
     {
       id: 1,
@@ -120,6 +122,18 @@ function EmpanadasCards() {
     setMenu(nuevoMenu);
   };
 
+  const agregarAlPedido = (id) => {
+    const itemAgregado = menu.find((item) => item.id === id);
+
+    if (itemAgregado && itemAgregado.mount > 0) {
+      setCarrito([...carrito, itemAgregado]);
+      // reseteamos el contador una vez que damos click en el boton y se ejecuta Agregar al pedido:
+      const nuevoMenu = menu.map((item) => (item.id === id ? { ...item, mount: 0 } : item));
+      setMenu(nuevoMenu);
+    // TODO: Arreglar error, que no tenga que ejecutarse 2 veces!!
+    }
+  };
+
   return (
     <div className="grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-12 px-16 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
       {menu.map(({ img, title, description, price, ofertPrice, mount, id }) => (
@@ -145,7 +159,7 @@ function EmpanadasCards() {
                 </button>
               </div>
 
-              <button type="submit" className="block mt-2 w-full font-display font-bold text-base px-4 py-3 tracking-wide text-center capitalize transition-colors duration-300 transform bg-[#CF5100] rounded-[14px] hover:bg-[#b7584a] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80">
+              <button type="submit" onClick={() => agregarAlPedido(id)} className="block mt-2 w-full font-display font-bold text-base px-4 py-3 tracking-wide text-center capitalize transition-colors duration-300 transform bg-[#CF5100] rounded-[14px] hover:bg-[#b7584a] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80">
                 Agregar al pedido
               </button>
             </div>
