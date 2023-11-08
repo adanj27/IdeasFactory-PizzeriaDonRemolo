@@ -1,65 +1,72 @@
-import React from 'react';
-import { CarneSuave, Pizza4Quesos, PizzaNapolitana } from '../assets';
+/* eslint-disable max-len */
+import React, { useState, useEffect } from 'react';
+import { reiniciarCarrito, obtenerCarrito, actualizarCarrito } from '../store/carritoStore';
 
 function ShoppingCart() {
+  const [carrito, setCarrito] = useState([]);
+
+  // cargar el carrito visual con lo que esta en el localStorage:
+  useEffect(() => {
+    setCarrito(obtenerCarrito());
+  }, []);
+
+  const reducirCantidad = (id) => {
+    const nuevoCarrito = carrito.map((item) => (item.id === id ? { ...item, amount: item.amount - 1 } : item));
+    const comidaSeleccionada = nuevoCarrito.find(((item) => item.id === id));
+    setCarrito(nuevoCarrito);
+    actualizarCarrito(comidaSeleccionada);
+  };
+
+  const aumentarCantidad = (id) => {
+    const nuevoCarrito = carrito.map((item) => (item.id === id ? { ...item, amount: item.amount + 1 } : item));
+    const comidaSeleccionada = nuevoCarrito.find(((item) => item.id === id));
+    actualizarCarrito(comidaSeleccionada);
+    setCarrito(nuevoCarrito);
+  };
+
+  const borrarCarrito = () => {
+    setCarrito([]);
+    reiniciarCarrito();
+  };
+
+  const calcularPrecio = () => {
+    console.log(carrito);
+    const precioTotal = carrito.reduce((total, item) => total + item.ofertPrice * item.amount, 0);
+    return precioTotal;
+  };
+
   return (
     <div className="w-full lg:w-2/5">
       <div className="flex flex-row items-center justify-between px-5 mt-5">
         <div className="font-bold text-xl">Mi orden actual</div>
         <div className="font-semibold">
-          <span className="px-4 py-2 rounded-md bg-red-100 text-red-500">Quitar todo</span>
+          <button type="submit" onClick={() => borrarCarrito()} className="px-4 py-2 rounded-md bg-red-100 text-red-500">
+            Quitar todo
+          </button>
         </div>
       </div>
 
       <div className="px-5 py-4 mt-5 overflow-y-auto h-64">
-        <div className="flex flex-row justify-between items-center mb-4">
-          <div className="flex flex-row items-center w-2/5">
-            <img
-              src={PizzaNapolitana}
-              className="w-10 h-10 object-cover rounded-md"
-              alt=""
-            />
-            <span className="ml-4 font-semibold text-sm">Pizza Napolitana</span>
+        {carrito.map(({
+          title, ofertPrice, amount, img, id,
+        }) => (
+          <div key={id} className="flex flex-row justify-between items-center mb-4">
+            <div className="flex flex-row items-center w-2/5">
+              <img src={img} className="w-10 h-10 object-cover rounded-md" alt="" />
+              <span className="ml-4 font-semibold text-sm">{title}</span>
+            </div>
+            <div className="w-32 flex justify-between">
+              <button onClick={() => reducirCantidad(id)} type="submit" className="px-3 py-1 rounded-md bg-gray-300 ">
+                -
+              </button>
+              <span className="font-semibold mx-4">{amount}</span>
+              <button onClick={() => aumentarCantidad(id)} type="submit" className="px-3 py-1 rounded-md bg-gray-300 ">
+                +
+              </button>
+            </div>
+            <div className="font-semibold text-lg w-16 text-center">{ofertPrice}</div>
           </div>
-          <div className="w-32 flex justify-between">
-            <span className="px-3 py-1 rounded-md bg-gray-300 ">-</span>
-            <span className="font-semibold mx-4">2</span>
-            <span className="px-3 py-1 rounded-md bg-gray-300 ">+</span>
-          </div>
-          <div className="font-semibold text-lg w-16 text-center">$4000</div>
-        </div>
-        <div className="flex flex-row justify-between items-center mb-4">
-          <div className="flex flex-row items-center w-2/5">
-            <img
-              src={Pizza4Quesos}
-              className="w-10 h-10 object-cover rounded-md"
-              alt=""
-            />
-            <span className="ml-4 font-semibold text-sm">Pizza Cuatro Quesos</span>
-          </div>
-          <div className="w-32 flex justify-between">
-            <span className="px-3 py-1 rounded-md bg-gray-300 ">-</span>
-            <span className="font-semibold mx-4">10</span>
-            <span className="px-3 py-1 rounded-md bg-gray-300 ">+</span>
-          </div>
-          <div className="font-semibold text-lg w-16 text-center">$1900</div>
-        </div>
-        <div className="flex flex-row justify-between items-center mb-4">
-          <div className="flex flex-row items-center w-2/5">
-            <img
-              src={CarneSuave}
-              className="w-10 h-10 object-cover rounded-md"
-              alt=""
-            />
-            <span className="ml-4 font-semibold text-sm">Empanada Carne Suave</span>
-          </div>
-          <div className="w-32 flex justify-between">
-            <span className="px-3 py-1 rounded-md bg-gray-300 ">-</span>
-            <span className="font-semibold mx-4">5</span>
-            <span className="px-3 py-1 rounded-md bg-gray-300 ">+</span>
-          </div>
-          <div className="font-semibold text-lg w-16 text-center">$2500</div>
-        </div>
+        ))}
       </div>
 
       <div className="px-5 mt-5">
@@ -78,15 +85,13 @@ function ShoppingCart() {
           </div>
           <div className="border-t-2 mt-3 py-2 px-4 flex items-center justify-between">
             <span className="font-semibold text-2xl">Total</span>
-            <span className="font-bold text-2xl">$7750.00</span>
+            <span className="font-bold text-2xl">{calcularPrecio()}</span>
           </div>
         </div>
       </div>
 
       <div className="px-5 mt-5">
-        <div className="px-4 py-4 rounded-md shadow-lg text-center bg-[#CF5100] text-white font-semibold">
-          Pagar
-        </div>
+        <button onClick={() => borrarCarrito()} type="submit" className="px-4 py-4 rounded-md shadow-lg text-center bg-[#CF5100] text-white font-semibold">Pagar</button>
       </div>
     </div>
   );

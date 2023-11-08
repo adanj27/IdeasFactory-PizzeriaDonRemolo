@@ -1,12 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
-import Pizzas from '../pages/Pizzas';
-import Empanadas from '../pages/Empanadas';
-import Contacto from '../pages/Contacto';
-import Carrito from '../pages/Carrito';
-import Navbar from '../components/Navbar/navbar2';
-import Footer from '../components/footer/footer';
+import Pizzas from '../pages/PizzasPage';
+import Empanadas from '../pages/EmpanadasPage';
+import Contacto from '../pages/ContactoPage';
+import Carrito from '../pages/CarritoPage';
 
 function Router() {
   return (
