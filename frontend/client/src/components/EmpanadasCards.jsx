@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /* eslint-disable object-curly-newline */
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useState } from 'react';

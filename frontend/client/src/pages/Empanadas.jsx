@@ -1,16 +1,8 @@
 import React from 'react';
-import Navbar from '../components/Navbar/navbar2';
-import Footer from '../components/footer/footer';
 import EmpanadasCards from '../components/EmpanadasCards';
 
 function Empanadas() {
-  return (
-    <>
-      <Navbar />
-      <EmpanadasCards />
-      <Footer />
-    </>
-  );
+  return <EmpanadasCards />;
 }
 
 export default Empanadas;

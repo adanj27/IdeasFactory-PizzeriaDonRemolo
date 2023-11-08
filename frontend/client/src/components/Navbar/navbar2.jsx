@@ -10,15 +10,15 @@ function Navbar() {
     },
     {
       text: 'Pizzas',
-      href: 'pizzas',
+      href: '/pizzas',
     },
     {
       text: 'Empanadas',
-      href: 'empanadas',
+      href: '/empanadas',
     },
     {
       text: 'Contacto',
-      href: 'contacto',
+      href: '/contacto',
     },
   ];
 
@@ -26,7 +26,11 @@ function Navbar() {
     <nav className="bg-white p-3">
       <div className="flex justify-between items-center text-center">
         <div className="flex items-center">
-          <img src="Dom romulo.png" alt="logo1" className="h-16 md:h-20 mx-auto md:mx-0" />
+          <img
+            src="Dom romulo.png"
+            alt="logo1"
+            className="h-16 md:h-20 mx-auto md:mx-0"
+          />
           <img src="pizza.png" alt="logo2" className="h-16" />
         </div>
 
@@ -46,7 +50,10 @@ function Navbar() {
 
 function NavItem({ href, text }) {
   return (
-    <Link to={href} className="w-28 h-10 text-center pt-1 text-black mx-4 hover:bg-[#CF5100A6] rounded-2xl shadow-md">
+    <Link
+      to={href}
+      className="w-28 h-10 text-center pt-1 text-black mx-4 hover:bg-[#CF5100A6] rounded-2xl shadow-md"
+    >
       {text}
     </Link>
   );
@@ -59,9 +66,14 @@ NavItem.propTypes = {
 
 function CartButton() {
   return (
-    <button type="submit" className="h-12 w-12 p-2 text-orange hover:bg-[#CF5100A6] rounded-2xl shadow-md">
-      <img src="compras.png" alt="carrito" className="p-1" />
-    </button>
+    <Link to="/carrito">
+      <button
+        type="submit"
+        className="h-12 w-12 p-2 text-orange hover:bg-[#CF5100A6] rounded-2xl shadow-md"
+      >
+        <img src="compras.png" alt="carrito" className="p-1" />
+      </button>
+    </Link>
   );
 }
 
