@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
-import Pizzas from '../pages/Pizzas';
-import Empanadas from '../pages/Empanadas';
-import { Contacto } from '../assets';
-import Carrito from '../pages/Carrito';
+import Pizzas from '../pages/PizzasPage';
+import Empanadas from '../pages/EmpanadasPage';
+import Contacto from '../pages/ContactoPage';
+import Carrito from '../pages/CarritoPage';
 
 function Router() {
   return (
