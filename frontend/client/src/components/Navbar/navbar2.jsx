@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { CarritoLogo } from '../../assets';
 
 function Navbar() {
   const navItems = [
@@ -10,27 +11,27 @@ function Navbar() {
     },
     {
       text: 'Pizzas',
-      href: 'pizzas',
+      href: '/pizzas',
     },
     {
       text: 'Empanadas',
-      href: 'empanadas',
+      href: '/empanadas',
     },
     {
       text: 'Contacto',
-      href: 'contacto',
+      href: '/contacto',
     },
   ];
 
   return (
-    <nav className="bg-white p-3">
+    <div className="bg-white p-4">
       <div className="flex justify-between items-center text-center">
         <div className="flex items-center">
           <img src="Dom romulo.png" alt="logo1" className="h-16 md:h-20 mx-auto md:mx-0" />
           <img src="pizza.png" alt="logo2" className="h-16" />
         </div>
 
-        <div className="flex text-lg font-[450px] font-display -translate-x-36">
+        <div className="flex text-lg font-[450px] font-display -translate-x-36 mt-2">
           {navItems.map(({ text, href }) => (
             <NavItem key={text} text={text} href={href} />
           ))}
@@ -40,7 +41,7 @@ function Navbar() {
           <CartButton />
         </div>
       </div>
-    </nav>
+    </div>
   );
 }
 
@@ -59,9 +60,9 @@ NavItem.propTypes = {
 
 function CartButton() {
   return (
-    <button type="submit" className="h-12 w-12 p-2 text-orange hover:bg-[#CF5100A6] rounded-2xl shadow-md">
-      <img src="compras.png" alt="carrito" className="p-1" />
-    </button>
+    <Link to="/carrito" className="flex p-3 text-orange hover:bg-[#CF5100A6] rounded-2xl shadow-md">
+      <img src={CarritoLogo} alt="logo" className="w-8" />
+    </Link>
   );
 }
 
