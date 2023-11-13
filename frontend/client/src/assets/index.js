@@ -28,3 +28,5 @@ export { default as BgCarrousel3 } from './bgimage3.png';
 export { default as Logo } from './LogoPizza.png';
 export { default as CarritoLogo } from './compras.png';
 export { default as BgContacto } from './contacto-fondo.png';
+export { default as Cerveza } from './cerveza.png';
+export { default as Empanadas } from './empanadas.jpg';

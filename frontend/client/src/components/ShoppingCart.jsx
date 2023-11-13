@@ -93,7 +93,10 @@ function ShoppingCart() {
             </div>
             <div className="border-t-2 mt-3 py-2 px-4 flex items-center justify-between">
               <span className="font-semibold text-2xl">Total</span>
-              <span className="font-bold text-2xl">{calcularPrecio()}</span>
+              <span className="font-bold text-2xl">
+                $
+                {calcularPrecio()}
+              </span>
             </div>
           </div>
         </div>
