@@ -5,20 +5,20 @@ use App\Config\ResponseHttp;
 use App\Models\ORM;
 use App\Models\order\validator\OrderValidate;
 use Twilio\Rest\Client;
-
+use App\Models\Order\Service\ServiceContainer;
+use App\Models\Order\Util\CreateMessage;
 
 /**
  * OrderModel class that inherits from ORM
  */
-class OrderModel extends ORM
-{
+class OrderModel extends ORM{
     // Class properties
     protected $table = 'orders';
     private $id_order;
     private $id_customer;
     private $id_status = 1;
-
-
+    private $whatsAppService;
+ 
 
     /**
      *  Class constructor, receives an array of data to initialize properties
@@ -30,6 +30,7 @@ class OrderModel extends ORM
         $this->id_order = $data['id_order'] ?? null;
         $this->id_customer = $data['id_customer'] ?? null;
         $this->id_status = $data['id_status'] ?? null;
+        $this->whatsAppService = ServiceContainer::getWhatsAppService();
     }
 
     /**
@@ -93,9 +94,7 @@ class OrderModel extends ORM
 
 
     //GET ALL ORDERS
-
-    public static function getOrders()
-    {
+    public static function getOrders(){
 
         try {
 
@@ -104,7 +103,7 @@ class OrderModel extends ORM
                     SELECT * FROM view_orders;");
             $query->execute();
 
-            // Retorna los resultados como objetos OrderModel
+            // Return results as OrderModel objects
             $query->execute();
             $results = $query->fetchAll(\PDO::FETCH_ASSOC);
             if ($results) {
@@ -121,8 +120,7 @@ class OrderModel extends ORM
 
 
 //CREATE ORDER  
-public static function createNewOrder(array $data)
-{
+public function createNewOrder(array $data){
 
     try {
         $con = self::getConnection();
@@ -132,18 +130,22 @@ public static function createNewOrder(array $data)
         $phone = $customerData['phone'];
         $address = $customerData['address'];
 
-        //valida si los nombres son correctos
+        //validate phone - send message by whatsapp
+        $mgsValidate = CreateMessage::defaultMessage();
+        $send = $this->whatsAppService->sendMessage($mgsValidate, $phone);
+        if (!$send) return;
+
+        //validates if the names are correct 
         $productsData = OrderValidate::validateProducts($data['products'])
             ? json_encode($data['products'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
             : null;
         $combosData = OrderValidate::validateCombos($data['combos'])
             ? json_encode($data['combos'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
             : null;
-        //sin productos y combos
-        if ($productsData == null && $combosData == null)
-            return;
+        //without products and combos
+        if ($productsData == null && $combosData == null) return;
 
-        // Prepara la consulta SQL STORAGE PROCEDURE -> RETURN ID_ORDER
+        //Prepare the SQL query STORAGE PROCEDURE -> RETURN ID_ORDER
         $query = $con->prepare("CALL create_order(:username, :phone, :address, :products, :combos, @id_order)");
         $query->bindParam(':username', $username);
         $query->bindParam(':phone', $phone);
@@ -153,30 +155,19 @@ public static function createNewOrder(array $data)
 
         $query->execute();
 
-        // Get the ID of the created order
+        //Get the ID of the created order
         $query = $con->prepare("SELECT @id_order AS id_order");
         $query->execute();
         $result = $query->fetch(\PDO::FETCH_ASSOC);
         $id_order = $result['id_order'];
 
-        // Llama a la función para enviar el mensaje de WhatsApp
         $order = OrderModel::getOrderById($id_order);
+
         if ($order) {
-            $orderData = json_decode($order, true);
-            $messageText = "¡Nueva orden creada!\n";
-            $messageText .= "ID de orden: " . $orderData['order']['id_order'] . "\n";
-            $messageText .= "Cliente: " . $customerData['username'] . "\n";
-            $messageText .= "Teléfono: " . $customerData['phone'] . "\n";
-            $messageText .= "Dirección: " . $customerData['address'] . "\n";
-
-            $phoneWapp = $customerData['phone'];
-            $messageText = str_replace(["\n", "\t"], ' ', $messageText);
-            $messageText = preg_replace('/\s{4,}/', ' ', $messageText);
-            // Llama a la función para enviar el mensaje de WhatsApp
-            self::sendWhatsAppMessage($phoneWapp, $messageText);
-        }
-
-        // Devuelve la respuesta después de enviar el mensaje de WhatsApp
+            //send order message to whatsapp 
+            $mgsOrder = CreateMessage::createMessage($order);
+            $this->whatsAppService->sendMessage($mgsOrder, $phone);
+       }
         return $order;
 
     } catch (\PDOException $e) {
@@ -188,70 +179,13 @@ public static function createNewOrder(array $data)
     }
 }
 
-private static function sendWhatsAppMessage($phoneWapp, $messageText  )
-{
-    // Configura y utiliza la API de WhatsApp Business
-    $token = "ID_TOKEN";
-    //traer el numero del la orden del mensajeText phone
-    $url = "https://graph.facebook.com/v17.0/102091889664276/messages";
-
-    $message = json_encode([
-        'messaging_product' => 'whatsapp',
-        'to' => $phoneWapp,
-        'type' => 'template',
-        'template' => [
-            'name' => 'orden',
-            'language' => [
-                'code' => 'es'
-            ],
-            'components' => [
-                [
-                    'type' => 'body',
-                    'parameters' => [
-                        [
-                            'type' => 'text',
-                            'text' => $messageText
-                        ]
-                    ]
-                ]
-            ]
-
-        ]
-    ]);
-
-    $json = json_decode($message);
-    if ($json === null) {
-        error_log("OrderModel::sendWhatsAppMessage -> " . $message);
-        return;
-    }
-
-    $header = array("Authorization: Bearer " . $token, "Content-Type: application/json");
-
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $message);
-
-    $response = json_decode(curl_exec($ch), true);
-    print_r($response);
-    curl_close($ch);
-}
-
-
-
-
 
     //UPDATE
-    public static function updateProduct(int $id_product, array $data)
-    {
-    }
+    public static function updateProduct(int $id_product, array $data){}
 
 
     //DELETE
-    public static function deleteOrder(int $id_order)
-    {
-    }
+    public static function deleteOrder(int $id_order){}
     /*****other class-specific methods ****/
 
 }
