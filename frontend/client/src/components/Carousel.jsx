@@ -51,7 +51,7 @@ export default function Carousel() {
       spaceBetween={30}
       centeredSlides
       autoplay={{
-        delay: 2500,
+        delay: 4500,
         disableOnInteraction: false,
       }}
       pagination={{

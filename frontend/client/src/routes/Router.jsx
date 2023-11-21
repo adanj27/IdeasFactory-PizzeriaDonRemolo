@@ -8,6 +8,8 @@ import Empanadas from '../pages/EmpanadasPage';
 import Contacto from '../pages/ContactoPage';
 import Carrito from '../pages/CarritoPage';
 import NoMatch from '../pages/NoMatch';
+import Bebidas from '../pages/BebidasPage';
+import PagarPage from '../pages/PagarPage';
 
 function Routing() {
   return (
@@ -17,8 +19,10 @@ function Routing() {
           <Route index element={<Home />} />
           <Route path="pizzas" element={<Pizzas />} />
           <Route path="empanadas" element={<Empanadas />} />
+          <Route path="bebidas" element={<Bebidas />} />
           <Route path="contacto" element={<Contacto />} />
           <Route path="carrito" element={<Carrito />} />
+          <Route path="pagar" element={<PagarPage />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
