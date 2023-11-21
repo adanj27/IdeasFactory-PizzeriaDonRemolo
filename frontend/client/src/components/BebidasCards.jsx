@@ -1,115 +1,129 @@
 /* eslint-disable max-len */
+/* eslint-disable object-curly-newline */
+/* eslint-disable implicit-arrow-linebreak */
 import React, { useState } from 'react';
-import { actualizarCarrito } from '../store/carritoStore';
 import {
-  Pizza4Quesos,
-  PizzaCalabresa,
-  Muzzarella,
-  PizzaPalmitos,
-  PizzaFugazzeta,
-  PizzaNapolitana,
-  PizzaPanceta,
-  PizzaProvolone,
-  PizzaFaina,
+  CocaCola,
+  Sprite,
+  Fanta,
+  Cerveza,
+  AndesRubia,
+  AndesRoja,
+  Heineken,
+  Stella,
+  Elementos,
+  Portillo,
 } from '../assets';
+import { actualizarCarrito } from '../store/carritoStore';
 
-function ProductCard() {
-  const [menuPizza, setMenuPizza] = useState([
+function BebidasCards() {
+  const [menu, setMenu] = useState([
     {
       id: 1,
-      img: Pizza4Quesos,
-      title: 'Pizza Cuatro Quesos',
-      price: '$2500',
-      ofertPrice: 1899,
-      description: 'Provolone, Roquefort y Parmesano',
+      img: CocaCola,
+      title: 'Coca Cola',
+      price: '$1500',
+      ofertPrice: 1500,
       amount: 0,
+      description: '1.5 lts',
     },
     {
       id: 2,
-      img: Muzzarella,
-      title: 'Pizza Fugazzeta',
-      price: '$2100',
-      ofertPrice: 1499,
-      description: 'Queso muzzarella y cebolla',
+      img: Sprite,
+      title: 'Sprite',
+      price: '$1500',
+      ofertPrice: 1500,
       amount: 0,
+      description: '1.5 lts',
     },
     {
       id: 3,
-      img: PizzaNapolitana,
-      title: 'Pizza Napolitana',
-      price: '$2100',
-      ofertPrice: 1499,
-      description: 'Salsa de tomate, tomates y albahaca',
+      img: Fanta,
+      title: 'Fanta',
+      price: '$1500',
+      ofertPrice: 1500,
       amount: 0,
+      description: '1.5 lts',
     },
     {
       id: 4,
-      img: PizzaFugazzeta,
-      title: 'Pizza Fugazzeta',
-      price: '$2400',
-      ofertPrice: 1799,
-      description: 'Cebolla y provolone gratinado',
+      img: Cerveza,
+      title: 'Andes IPA',
+      price: '$2500',
+      ofertPrice: 2500,
       amount: 0,
+      description: 'Cerveza IPA de litro',
     },
     {
       id: 5,
-      img: PizzaCalabresa,
-      title: 'Pizza Calabresa',
-      price: '$2300',
-      ofertPrice: 1699,
-      description: 'Longanizas en rodajas',
+      img: AndesRubia,
+      title: 'Andes rubia',
+      price: '$2500',
+      ofertPrice: 2500,
       amount: 0,
+      description: 'Cerveza rubia de litro',
     },
     {
       id: 6,
-      img: PizzaPanceta,
-      title: 'Pizza Panceta',
-      price: '$3000',
-      ofertPrice: 2700,
-      description: 'Salsa de tomate, queso y panceta',
+      img: AndesRoja,
+      title: 'Andes Roja',
+      price: '$2500',
+      ofertPrice: 2500,
       amount: 0,
+      description: 'Cerveza roja de litro',
     },
     {
       id: 7,
-      img: PizzaProvolone,
-      title: 'Pizza Provolone',
-      price: '$2000',
-      ofertPrice: 1299,
-      description: 'Queso Provolone con aceitunas negras',
+      img: Heineken,
+      title: 'Heineken',
+      price: '$3000',
+      ofertPrice: 3000,
       amount: 0,
+      description: 'Heineken de litro',
     },
     {
       id: 8,
-      img: PizzaPalmitos,
-      title: 'Pizza Palmitos',
-      price: '$3200',
+      img: Stella,
+      title: 'Stella',
+      price: '$3000',
       ofertPrice: 3000,
-      description: 'Palmitos, salsa golf y huevo',
       amount: 0,
+      description: 'Stella de litro',
     },
     {
       id: 9,
-      img: PizzaFaina,
-      title: 'Pizza Faina',
-      price: '$2000',
-      ofertPrice: 1800,
-      description: 'Fainá sin acompañantes',
+      img: Elementos,
+      title: 'Elementos',
+      price: '$4100',
+      ofertPrice: 4100,
       amount: 0,
+      description: 'Vino malbec',
+    },
+    {
+      id: 10,
+      img: Portillo,
+      title: 'Portillo',
+      price: '$3800',
+      ofertPrice: 3800,
+      amount: 0,
+      description: 'Vino Cabernet Suavignon',
     },
   ]);
 
   const reducirCantidad = (id) => {
-    const nuevoMenu = menuPizza.map((item) => (item.id === id ? { ...item, amount: item.amount - 1 } : item));
-    setMenuPizza(nuevoMenu);
+    const nuevoMenu = menu.map((item) =>
+      (item.id === id ? { ...item, amount: item.amount - 1 } : item));
+    setMenu(nuevoMenu);
   };
 
   const aumentarCantidad = (id) => {
-    const nuevoMenu = menuPizza.map((item) => (item.id === id ? { ...item, amount: item.amount + 1 } : item));
-    setMenuPizza(nuevoMenu);
+    const nuevoMenu = menu.map((item) =>
+      (item.id === id ? { ...item, amount: item.amount + 1 } : item));
+    setMenu(nuevoMenu);
   };
 
   const agregarAlCarrito = (id) => {
-    const itemAgregado = menuPizza.find((item) => item.id === id);
+    const itemAgregado = menu.find((item) => item.id === id);
 
     // si existe la comida, actualizamos el carrito con los nuevos valores:
     if (itemAgregado) {
@@ -119,9 +133,7 @@ function ProductCard() {
 
   return (
     <div className="grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-12 px-16 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
-      {menuPizza.map(({
-        img, title, description, price, ofertPrice, amount, id,
-      }) => (
+      {menu.map(({ img, title, description, price, ofertPrice, amount, id }) => (
         <div key={title} className="w-96 h-[480px] bg-white rounded-3xl shadow-xl overflow-hidden">
           <div className="w-full">
             <img src={img} alt="pizza" className="w-96 h-[215px]" />
@@ -158,4 +170,4 @@ function ProductCard() {
   );
 }
 
-export default ProductCard;
+export default BebidasCards;

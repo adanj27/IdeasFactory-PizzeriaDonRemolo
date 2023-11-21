@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { reiniciarCarrito, obtenerCarrito, actualizarCarrito } from '../store/carritoStore';
 
 function ShoppingCart() {
@@ -30,8 +31,14 @@ function ShoppingCart() {
   };
 
   const calcularPrecio = () => {
+    const precioSubTotal = carrito.reduce((total, item) => total + item.ofertPrice * item.amount, 0);
+    return precioSubTotal;
+  };
+
+  const calcularDescuento = () => {
     const precioTotal = carrito.reduce((total, item) => total + item.ofertPrice * item.amount, 0);
-    return precioTotal;
+    const descuentoTotal = precioTotal * 0.10;
+    return descuentoTotal;
   };
 
   return (
@@ -81,11 +88,17 @@ function ShoppingCart() {
           <div className="py-4 rounded-md shadow-lg">
             <div className=" px-4 flex justify-between ">
               <span className="font-semibold text-sm">Subtotal</span>
-              <span className="font-bold">$8400</span>
+              <span className="font-bold">
+                $
+                {calcularPrecio()}
+              </span>
             </div>
             <div className=" px-4 flex justify-between ">
               <span className="font-semibold text-sm">Descuento</span>
-              <span className="font-bold">- $1000.00</span>
+              <span className="font-bold">
+                $
+                {calcularDescuento()}
+              </span>
             </div>
             <div className=" px-4 flex justify-between ">
               <span className="font-semibold text-sm">Envío</span>
@@ -95,20 +108,19 @@ function ShoppingCart() {
               <span className="font-semibold text-2xl">Total</span>
               <span className="font-bold text-2xl">
                 $
-                {calcularPrecio()}
+                {calcularPrecio() - calcularDescuento() + 350}
               </span>
             </div>
           </div>
         </div>
 
         <div className="px-5 mt-5 items-center flex justify-end">
-          <button
-            onClick={() => borrarCarrito()}
-            type="submit"
+          <Link
+            to="/pagar"
             className="px-10 py-4 rounded-md shadow-md shadow-[#CF5100] text-center bg-[#CF5100] text-white font-semibold hover:scale-105 duration-200"
           >
             Pagar
-          </button>
+          </Link>
         </div>
       </div>
     </div>

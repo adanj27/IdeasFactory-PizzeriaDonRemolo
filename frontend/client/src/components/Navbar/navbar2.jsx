@@ -18,6 +18,10 @@ function Navbar() {
       href: '/empanadas',
     },
     {
+      text: 'Bebidas',
+      href: '/bebidas',
+    },
+    {
       text: 'Contacto',
       href: '/contacto',
     },
