@@ -1,5 +1,7 @@
 import React from 'react';
-import EmpanadasCards from '../components/EmpanadasCards';
+import Navbar from '../components/Navbar/navbar2';
+import Footer from '../components/Footer/footer';
+import EmpanadasCards from '../components/Productos/EmpanadasCards';
 
 function Empanadas() {
   return <EmpanadasCards />;

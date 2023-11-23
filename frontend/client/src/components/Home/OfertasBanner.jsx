@@ -1,8 +1,8 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { BgMenuBar } from '../assets';
+import { BgMenuBar } from '../../assets';
 
-function HomeMenu() {
+function OfertasBanner() {
   return (
     <div className="flex justify-center items-center sm:w-full mx-auto my-4 bg-[#9C4235] rounded-3xl h-[336px]">
       <img src={BgMenuBar} alt="bg-menu" className="w-full h-full" />
@@ -15,4 +15,4 @@ function HomeMenu() {
   );
 }
 
-export default HomeMenu;
+export default OfertasBanner;

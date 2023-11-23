@@ -1,8 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Card from './Card';
-import { Menu, Locales, Contacto } from '../assets';
+import Card from '../Productos/Card';
+import { Menu, Locales, Contacto } from '../../assets';
 
 function MenuCards() {
   const cardData = [

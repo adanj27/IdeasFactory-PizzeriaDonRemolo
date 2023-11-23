@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
-import { actualizarCarrito } from '../store/carritoStore';
+import { actualizarCarrito } from '../../store/carritoStore';
 import {
   Pizza4Quesos,
   PizzaCalabresa,
@@ -11,7 +11,7 @@ import {
   PizzaPanceta,
   PizzaProvolone,
   PizzaFaina,
-} from '../assets';
+} from '../../assets';
 
 function ProductCard() {
   const [menuPizza, setMenuPizza] = useState([

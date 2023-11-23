@@ -1,111 +1,112 @@
+/* eslint-disable max-len */
 /* eslint-disable object-curly-newline */
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useState } from 'react';
 import {
-  CarneSuave,
-  CarneMalbec,
-  CarnePicante,
-  Humita,
-  Pollo,
-  Verdura,
-  PancetaCiruela,
-  JyQ,
-  Roquefort,
-  Caprese,
-} from '../assets';
-import { actualizarCarrito } from '../store/carritoStore';
+  CocaCola,
+  Sprite,
+  Fanta,
+  Cerveza,
+  AndesRubia,
+  AndesRoja,
+  Heineken,
+  Stella,
+  Elementos,
+  Portillo,
+} from '../../assets';
+import { actualizarCarrito } from '../../store/carritoStore';
 
-function EmpanadasCards() {
+function BebidasCards() {
   const [menu, setMenu] = useState([
     {
       id: 1,
-      img: CarneSuave,
-      title: 'Carne Suave',
-      price: '$600',
-      ofertPrice: 600,
+      img: CocaCola,
+      title: 'Coca Cola',
+      price: '$1500',
+      ofertPrice: 1500,
       amount: 0,
-      description: 'Nuestras clasicas empanadas de carne',
+      description: '1.5 lts',
     },
     {
       id: 2,
-      img: CarnePicante,
-      title: 'Carne picante',
-      price: '$600',
-      ofertPrice: 600,
+      img: Sprite,
+      title: 'Sprite',
+      price: '$1500',
+      ofertPrice: 1500,
       amount: 0,
-      description: 'Picante moderado, carne triturada',
+      description: '1.5 lts',
     },
     {
       id: 3,
-      img: CarneMalbec,
-      title: 'Carne al malbec',
-      price: '$700',
-      ofertPrice: 700,
+      img: Fanta,
+      title: 'Fanta',
+      price: '$1500',
+      ofertPrice: 1500,
       amount: 0,
-      description: 'Carne cortada a cuchillo al malbeec',
+      description: '1.5 lts',
     },
     {
       id: 4,
-      img: JyQ,
-      title: 'Jamon y queso',
-      price: '$600',
-      ofertPrice: 600,
+      img: Cerveza,
+      title: 'Andes IPA',
+      price: '$2500',
+      ofertPrice: 2500,
       amount: 0,
-      description: 'Jamon en lonjas con muzzarella',
+      description: 'Cerveza IPA de litro',
     },
     {
       id: 5,
-      img: Roquefort,
-      title: 'Roquefort',
-      price: '$600',
-      ofertPrice: 600,
+      img: AndesRubia,
+      title: 'Andes rubia',
+      price: '$2500',
+      ofertPrice: 2500,
       amount: 0,
-      description: 'Roquefort y jamón',
+      description: 'Cerveza rubia de litro',
     },
     {
       id: 6,
-      img: Caprese,
-      title: 'Capresse',
-      price: '$600',
-      ofertPrice: 600,
+      img: AndesRoja,
+      title: 'Andes Roja',
+      price: '$2500',
+      ofertPrice: 2500,
       amount: 0,
-      description: 'Queso, tomate y albahaca',
+      description: 'Cerveza roja de litro',
     },
     {
       id: 7,
-      img: Humita,
-      title: 'Humita',
-      price: '$600',
-      ofertPrice: 600,
+      img: Heineken,
+      title: 'Heineken',
+      price: '$3000',
+      ofertPrice: 3000,
       amount: 0,
-      description: 'Salsa blanca y choclo',
+      description: 'Heineken de litro',
     },
     {
       id: 8,
-      img: PancetaCiruela,
-      title: 'Panceta y Ciruela',
-      price: '$700',
-      ofertPrice: 700,
+      img: Stella,
+      title: 'Stella',
+      price: '$3000',
+      ofertPrice: 3000,
       amount: 0,
-      description: 'Panceta, queso y ciruela',
+      description: 'Stella de litro',
     },
     {
       id: 9,
-      img: Pollo,
-      title: 'Pollo clásicas',
-      price: '$600',
-      ofertPrice: 600,
+      img: Elementos,
+      title: 'Elementos',
+      price: '$4100',
+      ofertPrice: 4100,
       amount: 0,
-      description: 'Pollo y salsa especial de la casa',
+      description: 'Vino malbec',
     },
     {
       id: 10,
-      img: Verdura,
-      title: 'Verdura',
-      price: '$600',
-      ofertPrice: 600,
+      img: Portillo,
+      title: 'Portillo',
+      price: '$3800',
+      ofertPrice: 3800,
       amount: 0,
-      description: 'Espinaca fresca y muzzarella',
+      description: 'Vino Cabernet Suavignon',
     },
   ]);
 
@@ -133,9 +134,9 @@ function EmpanadasCards() {
   return (
     <div className="grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-12 px-16 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
       {menu.map(({ img, title, description, price, ofertPrice, amount, id }) => (
-        <div key={title} className="w-96 h-[480px] bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div key={title} className="w-96 h-[580px] bg-white rounded-3xl shadow-xl overflow-hidden">
           <div className="w-full">
-            <img src={img} alt="pizza" className="w-96 h-[215px]" />
+            <img src={img} alt="pizza" className="w-96 h-[275px]" />
 
             <div className="p-2 sm:p-4 font-display">
               <p className="font-bold text-gray-700 text-2xl leading-7">{title}</p>
@@ -169,4 +170,4 @@ function EmpanadasCards() {
   );
 }
 
-export default EmpanadasCards;
+export default BebidasCards;

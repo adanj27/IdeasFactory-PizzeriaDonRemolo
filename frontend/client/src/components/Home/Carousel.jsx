@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { BgCarrousel, CocaChica, PizzaCalabresa, BgCarrousel2, BgCarrousel3, Logo, Cerveza, Pizza4Quesos, Empanadas } from "../assets";
+import { BgCarrousel, CocaChica, PizzaCalabresa, BgCarrousel2, BgCarrousel3, Logo, Cerveza, Pizza4Quesos, Empanadas, Elementos } from "../../assets";
 
 // Import Swiper styles
 
@@ -25,7 +25,7 @@ export default function Carousel() {
       img2: CocaChica,
       title: "PROMO del día",
       subtitle: "Pizza calabresa + Coca de litro",
-      price: "$2499",
+      price: "$3999",
     },
     {
       id: 2,
@@ -34,15 +34,16 @@ export default function Carousel() {
       img2: Cerveza,
       title: "PROMO 2",
       subtitle: "Pizza Cuatro Quesos + IPA 1lt",
-      price: "$2999",
+      price: "$4499",
     },
     {
       id: 3,
       bgimage: BgCarrousel3,
       img1: Empanadas,
-      img2: Cerveza,
+      img2: Elementos,
       title: "PROMO 3",
-      subtitle: "Docena de empandas + IPA 1lt.",
+      subtitle: "Docena de empandas + Vino",
+      price: "$7500",
     },
   ];
 
