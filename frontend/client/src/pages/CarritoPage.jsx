@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar/navbar2';
-import Footer from '../components/footer/footer';
-import ShoppingCart from '../components/ShoppingCart';
+import Footer from '../components/Footer/footer';
+import ShoppingCart from '../components/Navbar/ShoppingCart';
 
 function Carrito() {
   return (

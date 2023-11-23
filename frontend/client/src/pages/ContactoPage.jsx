@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react';
 import Navbar from '../components/Navbar/navbar2';
-import Footer from '../components/footer/footer';
+import Footer from '../components/Footer/footer';
 import { BgContacto } from '../assets';
-import Feedback from '../components/Feedback';
-import LocalesBox from '../components/LocalesBox';
+import Feedback from '../components/Contacto/Feedback';
+import LocalesBox from '../components/Contacto/LocalesBox';
 
 function Contacto() {
   return (

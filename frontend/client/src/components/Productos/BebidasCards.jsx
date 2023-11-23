@@ -13,8 +13,8 @@ import {
   Stella,
   Elementos,
   Portillo,
-} from '../assets';
-import { actualizarCarrito } from '../store/carritoStore';
+} from '../../assets';
+import { actualizarCarrito } from '../../store/carritoStore';
 
 function BebidasCards() {
   const [menu, setMenu] = useState([
@@ -134,9 +134,9 @@ function BebidasCards() {
   return (
     <div className="grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-12 px-16 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
       {menu.map(({ img, title, description, price, ofertPrice, amount, id }) => (
-        <div key={title} className="w-96 h-[480px] bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div key={title} className="w-96 h-[580px] bg-white rounded-3xl shadow-xl overflow-hidden">
           <div className="w-full">
-            <img src={img} alt="pizza" className="w-96 h-[215px]" />
+            <img src={img} alt="pizza" className="w-96 h-[275px]" />
 
             <div className="p-2 sm:p-4 font-display">
               <p className="font-bold text-gray-700 text-2xl leading-7">{title}</p>

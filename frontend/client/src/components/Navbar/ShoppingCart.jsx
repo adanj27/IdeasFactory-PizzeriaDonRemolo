@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { reiniciarCarrito, obtenerCarrito, actualizarCarrito } from '../store/carritoStore';
+import { reiniciarCarrito, obtenerCarrito, actualizarCarrito } from '../../store/carritoStore';
 
 function ShoppingCart() {
   const [carrito, setCarrito] = useState([]);

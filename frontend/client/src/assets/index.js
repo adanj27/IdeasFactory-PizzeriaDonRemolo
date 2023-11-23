@@ -34,7 +34,7 @@ export { default as AndesRoja } from './andes-roja.jpg';
 export { default as CocaCola } from './cocacola.png';
 export { default as Sprite } from './sprite.jpg';
 export { default as Fanta } from './fanta.jpg';
-export { default as Elementos } from './elementos.jpg';
+export { default as Elementos } from './vino-elementos.png';
 export { default as Portillo } from './portillo.jpeg';
 export { default as Heineken } from './heineken.jpg';
 export { default as Stella } from './stella.jpg';

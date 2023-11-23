@@ -13,8 +13,8 @@ import {
   JyQ,
   Roquefort,
   Caprese,
-} from '../assets';
-import { actualizarCarrito } from '../store/carritoStore';
+} from '../../assets';
+import { actualizarCarrito } from '../../store/carritoStore';
 
 function EmpanadasCards() {
   const [menu, setMenu] = useState([

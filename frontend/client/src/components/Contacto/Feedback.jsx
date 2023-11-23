@@ -2,7 +2,7 @@ import React from 'react';
 
 function Feedback() {
   return (
-    <div className="bg-white ml-16 border border-[#CF5100] grid grid-cols-6 gap-2 rounded-xl p-8 w-[600px] text-sm">
+    <form className="bg-white ml-16 border border-[#CF5100] grid grid-cols-6 gap-2 rounded-xl p-8 w-[600px] text-sm">
       <h1 className="text-center mb-8 text-[#C150F] text-xl font-bold col-span-6">Cuéntanos que te parece Don Remolo!</h1>
       <textarea
         placeholder="Tu opinión es..."
@@ -37,7 +37,7 @@ function Feedback() {
           />
         </svg>
       </button>
-    </div>
+    </form>
   );
 }
 
