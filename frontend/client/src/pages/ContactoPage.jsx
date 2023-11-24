@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import Navbar from '../components/Navbar/navbar2';
 import Footer from '../components/footer/footer';

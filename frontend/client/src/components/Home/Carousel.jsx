@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-/* eslint-disable object-curly-newline */
+
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 import React, { useRef } from "react";

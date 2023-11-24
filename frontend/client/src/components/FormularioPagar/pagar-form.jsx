@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import Input from './Input';
