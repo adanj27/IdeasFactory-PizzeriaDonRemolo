@@ -1,8 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Card from './Card';
-import { Menu, Locales, Contacto } from '../assets';
+import Card from '../Productos/Card';
+import { Menu, Locales, Contacto } from '../../assets';
 
 function MenuCards() {
   const cardData = [
@@ -26,9 +25,9 @@ function MenuCards() {
     <div className="flex flex-wrap gap-10 items-center justify-center">
       {cardData.map((item) => (
         <div key={item.title}>
-          <Link to={item.to}>
-            <Card img={item.img} title={item.title} />
-          </Link>
+          {/* <Link to={item.to}> */}
+          <Card img={item.img} title={item.title} />
+          {/* </Link> */}
         </div>
       ))}
     </div>

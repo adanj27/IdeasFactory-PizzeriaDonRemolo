@@ -1,12 +1,12 @@
 /* eslint-disable quotes */
-/* eslint-disable object-curly-newline */
+
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { BgCarrousel, CocaChica, PizzaCalabresa, BgCarrousel2, BgCarrousel3, Logo } from "../assets";
+import { BgCarrousel, CocaChica, PizzaCalabresa, BgCarrousel2, BgCarrousel3, Logo, Cerveza, Pizza4Quesos, Empanadas, Elementos } from "../../assets";
 
 // Import Swiper styles
 
@@ -24,21 +24,26 @@ export default function Carousel() {
       img1: PizzaCalabresa,
       img2: CocaChica,
       title: "PROMO del día",
-      subtitle: "Pizza calabresa + coca de litro",
-      price: "$3500",
+      subtitle: "Pizza calabresa + Coca de litro",
+      price: "$3999",
     },
     {
       id: 2,
       bgimage: BgCarrousel2,
-      title: "Ya probaste la nueva?",
-      subtitle: "Rucula y jamón crudo",
-      price: "$175",
+      img1: Pizza4Quesos,
+      img2: Cerveza,
+      title: "PROMO 2",
+      subtitle: "Pizza Cuatro Quesos + IPA 1lt",
+      price: "$4499",
     },
     {
       id: 3,
       bgimage: BgCarrousel3,
+      img1: Empanadas,
+      img2: Elementos,
       title: "PROMO 3",
-      subtitle: "Las mejores pizzas están ACÁ!",
+      subtitle: "Docena de empandas + Vino",
+      price: "$7500",
     },
   ];
 
@@ -47,7 +52,7 @@ export default function Carousel() {
       spaceBetween={30}
       centeredSlides
       autoplay={{
-        delay: 222500,
+        delay: 4500,
         disableOnInteraction: false,
       }}
       pagination={{
@@ -59,7 +64,7 @@ export default function Carousel() {
     >
       {promos.map(({ id, title, subtitle, bgimage, img1, img2, price }) => (
         <SwiperSlide className="flex h-[1024]" key={id}>
-          <div className="w-2/3 flex flex-col items-center justify-center translate-x-10" style={{ bgimage }}>
+          <div className="w-2/3 flex flex-col items-center justify-center translate-x-4" style={{ bgimage }}>
             <h1 className="text-4xl mt-10 ml-10 font-lato font-medium  leading-10 text-black font-lato">
               {title}
             </h1>
@@ -68,13 +73,13 @@ export default function Carousel() {
             {/* Botón LO QUIERO */}
             <button
               type="submit"
-              className="text-black font-display text-xl font-semibold bg-white px-6 py-3 my-8 mx-auto rounded-2xl shadow-md hover:scale-110 duration-200 flex flex-col items-start justify-center"
+              className="text-black font-display text-xl font-semibold bg-white px-6 py-3 my-6 mb-10 mx-auto rounded-2xl shadow-md hover:scale-110 duration-200 flex flex-col items-start justify-center"
             >
               Lo quiero!
             </button>
           </div>
           {/* Imágen LOGO */}
-          <div className="absolute transform translate-y-24">
+          <div className="absolute transform translate-y-28 w-28">
             <img src={Logo} alt="logo" />
           </div>
 
