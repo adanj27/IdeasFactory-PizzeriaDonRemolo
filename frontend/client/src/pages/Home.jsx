@@ -8,9 +8,11 @@ import Footer from '../components/Footer/footer';
 function Home() {
   return (
     <div>
+      <Navbar />
       <HomeMenu />
       <Carousel />
       <MenuCards />
+      <Footer />
     </div>
   );
 }
