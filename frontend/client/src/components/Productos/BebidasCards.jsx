@@ -130,9 +130,9 @@ function BebidasCards() {
   };
 
   return (
-    <div className="grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-12 px-16 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
+    <div className="sm:grid-cols-2 grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-12 lg:px-16 px-5 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
       {menu.map(({ img, title, description, price, ofertPrice, amount, id }) => (
-        <div key={title} className="w-96 h-[580px] bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div key={title} className="w-full h-[580px] bg-white rounded-3xl shadow-xl overflow-hidden">
           <div className="w-full">
             <img src={img} alt="pizza" className="w-96 h-[275px]" />
 
@@ -145,7 +145,7 @@ function BebidasCards() {
                   {ofertPrice}
                 </p>
               </div>
-              <p className="text-[#7C7C80] text-[20px] py-3">{description}</p>
+              <p className="text-[#7C7C80] lg:text-[20px] py-3">{description}</p>
 
               <div className="flex w-fit px-2 py-2 mb-6 bg-gray-400 text-black rounded-full cursor-pointer shadow-md shadow-gray-500">
                 <button type="button" onClick={() => reducirCantidad(id)} className="inline font-medium text-sm font-display tracking-wide text-center transition-colors duration-200 transform rounded-full hover:bg-[#CF5100] p-1">

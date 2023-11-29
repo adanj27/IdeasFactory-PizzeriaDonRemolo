@@ -60,16 +60,16 @@ export default function Carousel() {
       }}
       navigation
       modules={[Autoplay, Pagination, Navigation]}
-      className="justify-center items-center sm:w-[805px] sm:h-[230px] my-12 bg-orange-500 rounded-3xl border-orange-700 border-2"
+      className="justify-center items-center sm:w-[805px] sm:h-[230px] h-[200px] my-12 bg-orange-500 rounded-3xl border-orange-700 border-2"
     >
       {promos.map(({ id, title, subtitle, bgimage, img1, img2, price }) => (
         <SwiperSlide className="flex h-[1024]" key={id}>
-          <div className="w-2/3 flex flex-col items-center justify-center translate-x-4" style={{ bgimage }}>
-            <h1 className="text-4xl mt-10 ml-10 font-lato font-medium  leading-10 text-black font-lato">
+          <div className="w-2/3 flex flex-col items-center justify-center lg:translate-x-4" style={{ bgimage }}>
+            <h1 className="lg:text-4xl sm:text-2xl text-xl mt-10 ml-10 font-lato font-medium  lg:leading-10 text-black font-lato">
               {title}
             </h1>
-            <h2 className="text-xl ml-10 font-lato font-medium leading-10 text-black font-display">{subtitle}</h2>
-            <h1 className="font-extrabold text-white text-4xl">{price}</h1>
+            <h2 className="lg:text-xl text-lg ml-10 font-lato font-medium lg:leading-10 text-black font-display">{subtitle}</h2>
+            <h1 className="font-extrabold text-white lg:text-4xl">{price}</h1>
             {/* Botón LO QUIERO */}
             <button
               type="submit"
@@ -79,14 +79,14 @@ export default function Carousel() {
             </button>
           </div>
           {/* Imágen LOGO */}
-          <div className="absolute transform translate-y-28 w-28">
+          <div className="absolute transform translate-y-28 lg:w-28 sm:w-24 w-16">
             <img src={Logo} alt="logo" />
           </div>
 
           {/* Imágenes pizza y coca */}
           <div className="flex flex-row -translate-x-10">
-            <img src={img1} alt="pizza" className="w-80 h-80 -translate-y-10 translate-x-12" />
-            <img src={img2} alt="bebida" className="w-64 h-64 -translate-y-3 -translate-x-4" />
+            <img src={img1} alt="pizza" className="lg:w-80 lg:h-80 sm:w-60 sm:h-60 w-48 h-48 -translate-y-10 translate-x-12" />
+            <img src={img2} alt="bebida" className="lg:w-64 lg:h-64 -translate-y-3 -translate-x-4" />
           </div>
         </SwiperSlide>
       ))}
