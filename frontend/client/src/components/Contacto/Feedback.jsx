@@ -2,8 +2,8 @@ import React from 'react';
 
 function Feedback() {
   return (
-    <form className="bg-white ml-16 border border-[#CF5100] grid grid-cols-6 gap-2 rounded-xl p-8 w-[600px] text-sm">
-      <h1 className="text-center mb-8 text-[#C150F] text-xl font-bold col-span-6">Cuéntanos que te parece Don Remolo!</h1>
+    <form className="bg-white lg:ml-16 border border-[#CF5100] grid grid-cols-6 gap-2 rounded-xl p-8 lg:w-[600px] text-sm">
+      <h1 className="text-center mb-8 text-[#C150F] sm:text-xl font-bold col-span-6">Cuéntanos que te parece Don Remolo!</h1>
       <textarea
         placeholder="Tu opinión es..."
         className="bg-slate-100 text-black h-28 placeholder:text-slate-800 placeholder:opacity-50 border border-slate-200 col-span-6 resize-none outline-none rounded-lg p-2 duration-300 focus:border-[#CF5100]"

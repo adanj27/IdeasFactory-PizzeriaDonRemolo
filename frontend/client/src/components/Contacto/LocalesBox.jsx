@@ -3,8 +3,8 @@ import React from 'react';
 function LocalesBox() {
   return (
     <>
-      <div className="flex items-center justify-center p-24 -translate-x-8">
-        <div className="relative bg-[#CF5100] w-[200px] sm:w-[650px] group transition-all duration-700 aspect-video flex items-center justify-center">
+      <div className="flex items-center justify-center lg:p-24 py-16 lg:-translate-x-8">
+        <div className="relative bg-[#CF5100] w-full sm:w-[650px] group transition-all duration-700 aspect-video flex items-center justify-center">
           <div className="transition-all flex flex-col items-center py-5 justify-start duration-300 group-hover:duration-1000 bg-slate-200 w-full h-full absolute group-hover:-translate-y-16">
             <p className="text-xl sm:text-4xl font-bold text-[#CF5100] font-display">LOCALES</p>
             <p className="px-10 text-[10px] sm:text-[16px] text-gray-700">
