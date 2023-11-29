@@ -60,7 +60,7 @@ export default function Carousel() {
       }}
       navigation
       modules={[Autoplay, Pagination, Navigation]}
-      className="justify-center items-center sm:w-[805px] sm:h-[230px] h-[200px] my-12 bg-orange-500 rounded-3xl border-orange-700 border-2"
+      className="sm:w-[805px] sm:h-[230px] h-[200px] my-12 bg-orange-500 rounded-3xl border-orange-700 border-2"
     >
       {promos.map(({ id, title, subtitle, bgimage, img1, img2, price }) => (
         <SwiperSlide className="flex h-[1024]" key={id}>

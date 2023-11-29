@@ -22,14 +22,16 @@ function MenuCards() {
     },
   ];
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 md:gap-0 items-center justify-center place-items-center">
-      {cardData.map((item) => (
-        <div key={item.title}>
-          {/* <Link to={item.to}> */}
-          <Card img={item.img} title={item.title} href={item.href} />
-          {/* </Link> */}
-        </div>
-      ))}
+    <div className="grid grid-cols-8">
+      <div className="col-start-1 col-end-9 md:col-start-3 md:col-end-7 flex flex-col md:flex-row items-center justify-center gap-10">
+        {cardData.map((item) => (
+          <div className="" key={item.title}>
+            {/* <Link to={item.to}> */}
+            <Card img={item.img} title={item.title} href={item.href} />
+            {/* </Link> */}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
