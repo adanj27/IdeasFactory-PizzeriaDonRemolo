@@ -130,11 +130,11 @@ function BebidasCards() {
   };
 
   return (
-    <div className="sm:grid-cols-2 grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-12 lg:px-16 px-5 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
+    <div className="sm:grid-cols-2 grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-32 lg:px-16 px-12 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
       {menu.map(({ img, title, description, price, ofertPrice, amount, id }) => (
-        <div key={title} className="w-full h-[580px] bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div key={title} className="w-[400px] h-[580px] bg-white rounded-3xl shadow-xl overflow-hidden">
           <div className="w-full">
-            <img src={img} alt="pizza" className="w-96 h-[275px]" />
+            <img src={img} alt="pizza" className="w-full h-[275px]" />
 
             <div className="p-2 sm:p-4 font-display">
               <p className="font-bold text-gray-700 text-2xl leading-7">{title}</p>
@@ -157,7 +157,7 @@ function BebidasCards() {
                 </button>
               </div>
 
-              <button type="submit" onClick={() => agregarAlCarrito(id)} className="block mt-2 w-full font-display font-bold text-base px-4 py-3 tracking-wide text-center capitalize transition-colors duration-300 transform bg-[#CF5100] rounded-[14px] hover:bg-[#b7584a] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80">
+              <button type="submit" onClick={() => agregarAlCarrito(id)} className="block mt-2 w-full font-display font-bold text-base px-4 md:py-4 py-6 tracking-wide text-center capitalize transition-colors duration-300 transform bg-[#CF5100] rounded-[14px] hover:bg-[#b7584a] focus:outline-none focus:ring focus:ring-opacity-80">
                 Agregar al pedido
               </button>
             </div>

@@ -1,9 +1,10 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { CarritoLogo } from '../../assets';
 
-function Navbar() {
+function Naavbar() {
   const navItems = [
     {
       text: 'Inicio',
@@ -77,4 +78,4 @@ function CartButton() {
   );
 }
 
-export default Navbar;
+export default Naavbar;

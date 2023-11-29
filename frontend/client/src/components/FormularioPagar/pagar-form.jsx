@@ -31,7 +31,7 @@ function PagarForm() {
   const { handleSubmit } = useFormContext();
 
   return (
-    <div className="max-w-md mx-auto relative overflow-hidden z-10 bg-white p-8 rounded-lg shadow-md border-2 border-[#CF5100]">
+    <div className="max-w-md mx-auto my-36 relative overflow-hidden z-10 bg-white p-8 rounded-lg shadow-md border-2 border-[#CF5100]">
       <h2 className="text-2xl text-[#CF5100] font-bold mb-6">Completá tus datos:</h2>
 
       <form onSubmit={handleSubmit} noValidate autoComplete="off">

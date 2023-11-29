@@ -8,25 +8,25 @@ function MenuCards() {
     {
       img: Menu,
       title: 'MENÚ',
-      to: '/pizzas',
+      href: '/pizzas',
     },
     {
       img: Locales,
       title: 'LOCALES',
-      to: '/locales',
+      href: '/contacto',
     },
     {
       img: Contacto,
       title: 'CONTACTO',
-      to: '/contacto',
+      href: '/contacto',
     },
   ];
   return (
-    <div className="flex flex-wrap gap-10 items-center justify-center">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 md:gap-0 items-center justify-center place-items-center">
       {cardData.map((item) => (
         <div key={item.title}>
           {/* <Link to={item.to}> */}
-          <Card img={item.img} title={item.title} />
+          <Card img={item.img} title={item.title} href={item.href} />
           {/* </Link> */}
         </div>
       ))}

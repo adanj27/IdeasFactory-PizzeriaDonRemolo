@@ -42,7 +42,7 @@ export default function Carousel() {
       img1: Empanadas,
       img2: Elementos,
       title: "PROMO 3",
-      subtitle: "Docena de empandas + Vino",
+      subtitle: "Docena de empanadas + Vino",
       price: "$7500",
     },
   ];
@@ -64,16 +64,16 @@ export default function Carousel() {
     >
       {promos.map(({ id, title, subtitle, bgimage, img1, img2, price }) => (
         <SwiperSlide className="flex h-[1024]" key={id}>
-          <div className="w-2/3 flex flex-col items-center justify-center lg:translate-x-4" style={{ bgimage }}>
-            <h1 className="lg:text-4xl sm:text-2xl text-xl mt-10 ml-10 font-lato font-medium  lg:leading-10 text-black font-lato">
+          <div className="w-2/3 flex flex-col mt-4 md:mt-0 items-center justify-center lg:translate-x-4" style={{ bgimage }}>
+            <h1 className="lg:text-4xl sm:text-3xl text-2xl mt-10 ml-10 font-lato font-medium  lg:leading-10 text-black font-lato">
               {title}
             </h1>
-            <h2 className="lg:text-xl text-lg ml-10 font-lato font-medium lg:leading-10 text-black font-display">{subtitle}</h2>
-            <h1 className="font-extrabold text-white lg:text-4xl">{price}</h1>
+            <h2 className="lg:text-2xl text-xl mt-2 ml-10 font-lato font-medium lg:leading-10 text-black font-display">{subtitle}</h2>
+            <h1 className="font-extrabold text-center text-3xl text-white lg:text-4xl">{price}</h1>
             {/* Botón LO QUIERO */}
             <button
               type="submit"
-              className="text-black font-display text-xl font-semibold bg-white px-6 py-3 my-6 mb-10 mx-auto rounded-2xl shadow-md hover:scale-110 duration-200 flex flex-col items-start justify-center"
+              className="text-black font-display text-sm font-semibold bg-white px-4 py-2 md:py-3 md:px-6 my-3 mb-12 mx-auto rounded-2xl shadow-md hover:scale-110 duration-200 flex flex-col items-start justify-center md:text-xl"
             >
               Lo quiero!
             </button>
@@ -85,7 +85,7 @@ export default function Carousel() {
 
           {/* Imágenes pizza y coca */}
           <div className="flex flex-row -translate-x-10">
-            <img src={img1} alt="pizza" className="lg:w-80 lg:h-80 sm:w-60 sm:h-60 w-48 h-48 -translate-y-10 translate-x-12" />
+            <img src={img1} alt="pizza" className="lg:w-80 lg:h-80 sm:w-60 sm:h-60 w-48 h-48 md:-translate-y-10 -translate-y-2 translate-x-12" />
             <img src={img2} alt="bebida" className="lg:w-64 lg:h-64 -translate-y-3 -translate-x-4" />
           </div>
         </SwiperSlide>
