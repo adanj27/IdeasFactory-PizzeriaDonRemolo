@@ -12,15 +12,15 @@ function ShoppingCart() {
   }, []);
 
   const reducirCantidad = (id) => {
-    const nuevoCarrito = carrito.map((item) => (item.id === id ? { ...item, amount: item.amount - 1 } : item));
-    const comidaSeleccionada = nuevoCarrito.find((item) => item.id === id);
+    const nuevoCarrito = carrito.map((item) => (item.idProduct === id ? { ...item, amount: item.amount - 1 } : item));
+    const comidaSeleccionada = nuevoCarrito.find((item) => item.idProduct === id);
     setCarrito(nuevoCarrito);
     actualizarCarrito(comidaSeleccionada);
   };
 
   const aumentarCantidad = (id) => {
-    const nuevoCarrito = carrito.map((item) => (item.id === id ? { ...item, amount: item.amount + 1 } : item));
-    const comidaSeleccionada = nuevoCarrito.find((item) => item.id === id);
+    const nuevoCarrito = carrito.map((item) => (item.idProduct === id ? { ...item, amount: item.amount + 1 } : item));
+    const comidaSeleccionada = nuevoCarrito.find((item) => item.idProduct === id);
     actualizarCarrito(comidaSeleccionada);
     setCarrito(nuevoCarrito);
   };
@@ -59,27 +59,27 @@ function ShoppingCart() {
 
         <div className="px-5 py-4 mt-5 overflow-y-auto h-64">
           {carrito.map(({
-            title, ofertPrice, amount, img, id,
+            productName, price, amount, imagePath, idProduct,
           }) => (
-            <div key={id} className="flex flex-row justify-between items-center mb-4">
+            <div key={idProduct} className="flex flex-row justify-between items-center mb-4">
               <div className="flex flex-row items-center w-2/5">
-                <img src={img} className="w-10 h-10 object-cover rounded-md" alt="" />
-                <span className="ml-4 font-semibold text-sm">{title}</span>
+                <img src={imagePath} className="w-10 h-10 object-cover rounded-md" alt="" />
+                <span className="ml-4 font-semibold text-sm">{productName}</span>
               </div>
               <div className="w-32 flex justify-between">
-                <button onClick={() => reducirCantidad(id)} type="submit" className="px-3 py-1 rounded-md bg-gray-300 ">
+                <button onClick={() => reducirCantidad(idProduct)} type="submit" className="px-3 py-1 rounded-md bg-gray-300 ">
                   -
                 </button>
                 <span className="font-semibold mx-4">{amount}</span>
                 <button
-                  onClick={() => aumentarCantidad(id)}
+                  onClick={() => aumentarCantidad(idProduct)}
                   type="submit"
                   className="px-3 py-1 rounded-md bg-gray-300 "
                 >
                   +
                 </button>
               </div>
-              <div className="font-semibold text-lg w-16 text-center">{ofertPrice}</div>
+              <div className="font-semibold text-lg w-16 text-center">{price}</div>
             </div>
           ))}
         </div>

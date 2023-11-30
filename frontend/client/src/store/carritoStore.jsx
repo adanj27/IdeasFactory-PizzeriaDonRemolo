@@ -9,8 +9,8 @@ export const actualizarCarrito = (comida) => {
   // SI LA COMIDA YA ESTABA EN EL CARRITO:
   // busco si el item seleccionado esta dentro del carrito,
   // desp recorro el carrito, vuelvo a buscar ese item y le cambio el amount por el amount
-  if (carrito.find((item) => item.id === comida.id)) {
-    carrito = carrito.map((item) => (item.id === comida.id ? { ...item, amount: comida.amount } : item));
+  if (carrito.find((item) => item.idProduct === comida.idProduct)) {
+    carrito = carrito.map((item) => (item.idProduct === comida.idProduct ? { ...item, amount: comida.amount } : item));
   } else {
     carrito = [...carrito, comida];
   }
