@@ -31,12 +31,12 @@ function ShoppingCart() {
   };
 
   const calcularPrecio = () => {
-    const precioSubTotal = carrito.reduce((total, item) => total + item.ofertPrice * item.amount, 0);
+    const precioSubTotal = carrito.reduce((total, item) => total + item.price * item.amount, 0);
     return precioSubTotal;
   };
 
   const calcularDescuento = () => {
-    const precioTotal = carrito.reduce((total, item) => total + item.ofertPrice * item.amount, 0);
+    const precioTotal = carrito.reduce((total, item) => total + item.price * item.amount, 0);
     const descuentoTotal = precioTotal * 0.10;
     return descuentoTotal;
   };

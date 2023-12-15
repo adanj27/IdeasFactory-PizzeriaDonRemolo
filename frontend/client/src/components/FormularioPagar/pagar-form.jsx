@@ -2,6 +2,18 @@ import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import Input from './Input';
 
+const handlePedidoClick = () => {
+  // Número de teléfono y mensaje predefinido
+  const phoneNumber = '+542214345359'; // Reemplaza con el número de teléfono al que quieres enviar el mensaje
+  const mensaje = '¡Hola! Quiero realizar un pedido.';
+
+  // Construir el enlace de WhatsApp
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensaje)}`;
+
+  // Redirigir a la ventana de WhatsApp
+  window.location.href = whatsappLink;
+};
+
 const nameRules = {
   required: 'Debe ingresar un nombre completo',
   maxLength: {
@@ -40,6 +52,7 @@ function PagarForm() {
         <Input name="dir" type="text" placeholder="Ingresá tu dirección..." rules={dirRules} />
         <div className="flex justify-end">
           <button
+            onClick={handlePedidoClick}
             className="bg-[#CF5100] text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
             type="submit"
           >
