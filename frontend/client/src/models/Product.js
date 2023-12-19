@@ -1,7 +1,7 @@
 class Product {
   constructor(
     {
-      idProduct,
+      productId,
       productName,
       productDescription,
       category,
@@ -10,7 +10,7 @@ class Product {
     },
 
   ) {
-    this.idProduct = idProduct;
+    this.productId = productId;
 
     this.productName = productName;
 

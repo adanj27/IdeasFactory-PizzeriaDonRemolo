@@ -6,21 +6,22 @@ import { reiniciarCarrito, obtenerCarrito, actualizarCarrito } from '../../store
 function ShoppingCart() {
   const [carrito, setCarrito] = useState([]);
 
-  // cargar el carrito visual con lo que esta en el localStorage:
+  // cargar el carrito visual con lo que está en el localStorage:
   useEffect(() => {
     setCarrito(obtenerCarrito());
   }, []);
 
   const reducirCantidad = (id) => {
-    const nuevoCarrito = carrito.map((item) => (item.idProduct === id ? { ...item, amount: item.amount - 1 } : item));
-    const comidaSeleccionada = nuevoCarrito.find((item) => item.idProduct === id);
+    const nuevoCarrito = carrito.map((item) => (item.productId === id && item.amount > 0 ? { ...item, amount: item.amount - 1 } : item));
+    const comidaSeleccionada = nuevoCarrito.find((item) => item.productId === id);
     setCarrito(nuevoCarrito);
     actualizarCarrito(comidaSeleccionada);
+    // con el setCarrito actualizamos el carrito visual y con actualizar carrito el del localStorage ??
   };
 
   const aumentarCantidad = (id) => {
-    const nuevoCarrito = carrito.map((item) => (item.idProduct === id ? { ...item, amount: item.amount + 1 } : item));
-    const comidaSeleccionada = nuevoCarrito.find((item) => item.idProduct === id);
+    const nuevoCarrito = carrito.map((item) => (item.productId === id ? { ...item, amount: item.amount + 1 } : item));
+    const comidaSeleccionada = nuevoCarrito.find((item) => item.productId === id);
     actualizarCarrito(comidaSeleccionada);
     setCarrito(nuevoCarrito);
   };
@@ -42,10 +43,10 @@ function ShoppingCart() {
   };
 
   return (
-    <div className="flex justify-around">
+    <div className="flex justify-around py-24">
       <div className="w-full md:w-2/5 p-5">
         <div className="flex flex-row items-center justify-between px-5 mt-5">
-          <div className="font-bold text-xl">Mi orden actual</div>
+          <div className="font-bold text-3xl font-display"> Mi orden actual: </div>
           <div className="font-semibold">
             <button
               type="submit"
@@ -59,20 +60,20 @@ function ShoppingCart() {
 
         <div className="px-5 py-4 mt-5 overflow-y-auto h-64">
           {carrito.map(({
-            productName, price, amount, imagePath, idProduct,
+            productName, price, amount, imagePath, productId,
           }) => (
-            <div key={idProduct} className="flex flex-row justify-between items-center mb-4">
+            <div key={imagePath} className="flex flex-row justify-between items-center mb-4">
               <div className="flex flex-row items-center w-2/5">
                 <img src={imagePath} className="w-10 h-10 object-cover rounded-md" alt="" />
                 <span className="ml-4 font-semibold text-sm">{productName}</span>
               </div>
               <div className="w-32 flex justify-between">
-                <button onClick={() => reducirCantidad(idProduct)} type="submit" className="px-3 py-1 rounded-md bg-gray-300 ">
+                <button onClick={() => reducirCantidad(productId)} type="submit" className="px-3 py-1 rounded-md bg-gray-300 ">
                   -
                 </button>
                 <span className="font-semibold mx-4">{amount}</span>
                 <button
-                  onClick={() => aumentarCantidad(idProduct)}
+                  onClick={() => aumentarCantidad(productId)}
                   type="submit"
                   className="px-3 py-1 rounded-md bg-gray-300 "
                 >
