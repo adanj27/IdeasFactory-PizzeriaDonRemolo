@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import Navbar from '../components/Navbar/navbar';
-import Footer from '../components/Footer/footer';
+import Footer from '../components/footer/Footer';
 import ProductCard from '../components/Productos/ProductCards';
 import getAllProducts from '../services/ProductService';
 
