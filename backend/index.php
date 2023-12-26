@@ -4,6 +4,7 @@ use App\Config\Errorlog;
 use App\Config\ResponseHttp;
 
 require 'vendor/autoload.php';
+
 /**
  *All php errors will be saved in the php-error.log file
  */
@@ -15,7 +16,7 @@ Errorlog::activateErrorLog();
 if (isset($_GET['route'])) {
 
     $url = explode('/', $_GET['route']);
-    $lista = ['food','category']; //Contains the routes that are to be allowed
+    $lista = ['product','category','combo','order']; //Contains the routes that are to be allowed
     //Find the folders where our routes are
     $file = 'src/Routes/' .$url[0]. '.php';
 

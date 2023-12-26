@@ -26,5 +26,6 @@ module.exports = {
       js: 'never',
       jsx: 'never',
     }],
+    'object-curly-newline': ['error', { multiline: true, consistent: true }],
   }, // Asegúrate de cerrar las reglas con un corchete de cierre
 };
