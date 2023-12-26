@@ -3,7 +3,7 @@ import MenuCards from '../components/Home/MenuCards';
 import Carousel from '../components/Home/Carousel';
 import HomeMenu from '../components/Home/OfertasBanner';
 import Navbar from '../components/Navbar/navbar';
-import Footer from '../components/Footer/footer';
+import Footer from '../components/footer/footer';
 
 function Home() {
   return (

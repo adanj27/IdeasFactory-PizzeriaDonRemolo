@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-// eslint-disable-next-line import/no-extraneous-dependencies
+
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { CarritoLogo } from '../../assets';
 
