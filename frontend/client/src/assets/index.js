@@ -35,7 +35,7 @@ export { default as CocaCola } from './cocacola.jpg';
 export { default as Sprite } from './sprite.jpg';
 export { default as Fanta } from './fanta.jpg';
 export { default as Elementos } from './vino-elementos.png';
-export { default as Portillo } from './portillo.jpg';
+export { default as Portillo } from './botella_vino_tinto.jpg';
 export { default as Heineken } from './heineken.jpg';
 export { default as Stella } from './stella.jpg';
 export { default as Empanadas } from './empanadas.png';

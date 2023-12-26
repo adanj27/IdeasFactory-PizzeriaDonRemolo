@@ -6,11 +6,14 @@ function LocalesBox() {
       <div className="flex items-center justify-center lg:p-24 py-16 lg:-translate-x-8">
         <div className="relative bg-[#CF5100] w-full sm:w-[650px] group transition-all duration-700 aspect-video flex items-center justify-center">
           <div className="transition-all flex flex-col items-center py-5 justify-start duration-300 group-hover:duration-1000 bg-slate-200 w-full h-full absolute group-hover:-translate-y-16">
-            <p className="text-xl sm:text-4xl font-bold text-[#CF5100] font-display">LOCALES</p>
-            <p className="px-10 text-[10px] sm:text-[16px] text-gray-700">
-              Dirección: 123 Calle de la Pizza, Ciudad Pizza Teléfono: +1 (555) 123-4567
+            <p className="text-xl sm:text-4xl font-bold text-[#CF5100] font-display mb-1">LOCALES</p>
+            <p className="px-10 text-[14px] sm:text-[16px] text-gray-700">
+              123 Nro 641, Ciudad Pizza, Tel: +5493416836919
             </p>
-            <p className="font-serif text-[10px] sm:text-[14px] text-gray-700">Correo Electrónico: info@donremolo.com</p>
+            <p className="px-10 text-[14px] sm:text-[16px] text-gray-700">
+              321 Nro 7521, La Muza City, Tel: +5493416836919
+            </p>
+            <p className="font-serif text-[12px] sm:text-[16px] text-gray-700 mt-2">Correo Electrónico: info@donremolo.com</p>
             <p className="font-mono font-bold text-[16px] text-gray-700 pt-5">Don Remolo ©</p>
           </div>
           <button

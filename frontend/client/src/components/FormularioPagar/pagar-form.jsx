@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { Link } from 'react-router-dom';
@@ -31,24 +32,36 @@ const dirRules = {
 function PagarForm() {
   const [hidden, setHidden] = useState(false);
   const { handleSubmit } = useFormContext();
+  const [nombre, setNombre] = useState('');
+  const [direccion, setDireccion] = useState('');
+  const [telefono, setTelefono] = useState('');
+  /*   const [montoTotal, setMontoTotal] = useState(''); */
 
   const onSubmit = () => {
     // Número de teléfono y mensaje predefinido
-    const phoneNumber = '+542214345359'; // Reemplaza con el número de teléfono al que quieres enviar el mensaje
-    const mensaje = '¡Hola Pizzería Deliciosa!';
+    /* ​​ Monto Total: $${montoTotal.toFixed(2)} */
+    const phoneNumber = '+5493416836919'; // Reemplaza con el número de teléfono al que quieres enviar el mensaje
+    const mensaje = `
+    Hola!! Realicé un pedido, mis datos son:
+    
+    ​​​​Nombre: ${nombre}
+    ​​​Dirección: ${direccion}
+    ​​​Teléfono: ${telefono}
+    
+  El monto TOTAL a abonar es de: 
 
-    /*
-`
-Nuevo pedido de ChatGPT:
+    ​​Medios de pago: efectivo/transferencias.
 
-Nombre: ${nombre}
-Dirección: ${direccion}
-Pedido: ${pedido}
-Monto Total: $${montoTotal.toFixed(2)}
+  IMPORTANTE!!
+    
+    - Si el medio de pago que elegís es transferencia, una vez que envíes el comprobante de pago 
+    se inicializará tu pedido.
+    
+    - Corrobora que tus datos estén bien!!!
 
-¡Gracias!
-`; */
-
+  ¡Muchas Gracias! Cualquier duda consúltanos por este medio!
+`;
+    // aca con ${he.encode('😊')} encodeas los emojis usando la libreria he (import he from 'he')
     // Construir el enlace de WhatsApp
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensaje)}`;
 
@@ -61,7 +74,7 @@ Monto Total: $${montoTotal.toFixed(2)}
     hidden ? (
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-4xl text-center mt-36 font-display text-[#CF5100]">Gracias por tu pedido!</h2>
-        <p className="text-xl text-center py-8 font-display"> Puede seguir su pedido a traves del chat de WhatsApp </p>
+        <p className="text-xl text-center py-8 font-display"> Puede seguir su pedido a través del chat de WhatsApp </p>
         <Link to="/">
           <button className="bg-[#CF5100] text-white px-4 py-2 font-semibold rounded-md hover:opacity-80" type="submit">
             Volver al inicio
@@ -73,9 +86,9 @@ Monto Total: $${montoTotal.toFixed(2)}
         <h2 className="text-2xl text-[#CF5100] font-bold mb-6">Completá tus datos:</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} noValidate autoComplete="off">
-          <Input name="nombre" type="text" placeholder="Ingresá tu nombre..." rules={nameRules} />
-          <Input name="phone" type="phone" placeholder="221-1234567" rules={phoneRules} />
-          <Input name="dir" type="text" placeholder="Ingresá tu dirección..." rules={dirRules} />
+          <Input name="nombre" type="text" placeholder="Ingresá tu nombre..." rules={nameRules} onChange={(e) => setNombre(e.target.value)} />
+          <Input name="phone" type="phone" placeholder="221-1234567" rules={phoneRules} onChange={(e) => setTelefono(e.target.value)} />
+          <Input name="dir" type="text" placeholder="Ingresá tu dirección..." rules={dirRules} onChange={(e) => setDireccion(e.target.value)} />
           <div className="flex justify-end">
             <button className="bg-[#CF5100] text-white px-4 py-2 font-bold rounded-md hover:opacity-80" type="submit">
               Pedir

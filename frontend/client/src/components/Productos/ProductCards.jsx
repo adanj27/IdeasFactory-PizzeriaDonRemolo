@@ -35,8 +35,12 @@ function ProductCard({ productos }) {
             <div className="p-2 sm:p-4 font-display">
               <p className="font-bold text-gray-700 text-2xl leading-7">{productName}</p>
               <div className="flex flex-row mt-2">
-                <p className="text-[#3C3C4399] text-xl mr-2 line-through">{price}</p>
+                <p className="text-[#3C3C4399] text-xl mr-2 line-through">
+                  $
+                  {price}
+                </p>
                 <p className="text-2xl font-bold text-[#0FB478]">
+                  $
                   {price}
                 </p>
               </div>
