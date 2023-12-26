@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar/navbar';
-import Footer from '../components/footer/Footer';
+import Footer from '../components/footer/footer';
 import ShoppingCart from '../components/Navbar/ShoppingCart';
 
 function Carrito() {
