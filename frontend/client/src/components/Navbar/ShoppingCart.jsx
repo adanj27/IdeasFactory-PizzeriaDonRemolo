@@ -1,10 +1,16 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { reiniciarCarrito, obtenerCarrito, actualizarCarrito } from '../../store/carritoStore';
+import {
+  reiniciarCarrito,
+  obtenerCarrito,
+  actualizarCarrito,
+} from '../../store/carritoStore';
+import { useTotal } from '../../context/TotalContext';
 
 function ShoppingCart() {
   const [carrito, setCarrito] = useState([]);
+  const { setTotalPrecio } = useTotal();
 
   // cargar el carrito visual con lo que está en el localStorage:
   useEffect(() => {
@@ -41,6 +47,15 @@ function ShoppingCart() {
     const descuentoTotal = precioTotal * 0.10;
     return descuentoTotal;
   };
+
+  const actualizarTotal = () => {
+    const nuevoTotal = calcularPrecio() - calcularDescuento() + 350;
+    setTotalPrecio(nuevoTotal);
+  };
+
+  useEffect(() => {
+    actualizarTotal();
+  }, []);
 
   return (
     <div className="flex justify-around py-24">

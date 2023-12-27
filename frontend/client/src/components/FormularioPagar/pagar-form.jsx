@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import Input from './Input';
+import { useTotal } from '../../context/TotalContext';
 
 const nameRules = {
   required: 'Debe ingresar un nombre completo',
@@ -32,20 +33,24 @@ const dirRules = {
 function PagarForm() {
   const [hidden, setHidden] = useState(false);
   const { handleSubmit } = useFormContext();
+  const [nombre, setNombre] = useState('');
+  const [direccion, setDireccion] = useState('');
+  const [telefono, setTelefono] = useState('');
   /*   const [montoTotal, setMontoTotal] = useState(''); */
+  const { totalPrecio } = useTotal();
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     // Número de teléfono y mensaje predefinido
     /* ​​ Monto Total: $${montoTotal.toFixed(2)} */
-    // eslint-disable-next-line max-len
-    /* El monto TOTAL a abonar es de:  ${obtenerCarrito.totalPrice} (habria que crear un totalPrice que guarde la cuenta que cree en Total) */
     const phoneNumber = '+5493416836919'; // Reemplaza con el número de teléfono al que quieres enviar el mensaje
     const mensaje = `
     Hola!! Realicé un pedido, mis datos son:
     
-    ​​​​Nombre: ${data.name}
-    ​​​Dirección: ${data.dir}
-    ​​​Teléfono: ${data.phone}
+    ​​​​Nombre: ${nombre}
+    ​​​Dirección: ${direccion}
+    ​​​Teléfono: ${telefono}
+    
+  El monto TOTAL a abonar es de: ${totalPrecio}
 
     ​​Medios de pago: efectivo/transferencias.
 
@@ -83,9 +88,9 @@ function PagarForm() {
         <h2 className="text-2xl text-[#CF5100] font-bold mb-6">Completá tus datos:</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} noValidate autoComplete="off">
-          <Input name="name" type="text" placeholder="Ingresá tu nombre..." rules={nameRules} />
-          <Input name="phone" type="phone" placeholder="221-1234567" rules={phoneRules} />
-          <Input name="dir" type="text" placeholder="Ingresá tu dirección..." rules={dirRules} />
+          <Input name="nombre" type="text" placeholder="Ingresá tu nombre..." rules={nameRules} onChange={(e) => setNombre(e.target.value)} />
+          <Input name="phone" type="phone" placeholder="221-1234567" rules={phoneRules} onChange={(e) => setTelefono(e.target.value)} />
+          <Input name="dir" type="text" placeholder="Ingresá tu dirección..." rules={dirRules} onChange={(e) => setDireccion(e.target.value)} />
           <div className="flex justify-end">
             <button className="bg-[#CF5100] text-white px-4 py-2 font-bold rounded-md hover:opacity-80" type="submit">
               Pedir
