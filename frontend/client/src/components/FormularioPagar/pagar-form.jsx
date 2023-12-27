@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import Input from './Input';
+import { useTotal } from '../../context/TotalContext';
 
 const nameRules = {
   required: 'Debe ingresar un nombre completo',
@@ -36,6 +37,7 @@ function PagarForm() {
   const [direccion, setDireccion] = useState('');
   const [telefono, setTelefono] = useState('');
   /*   const [montoTotal, setMontoTotal] = useState(''); */
+  const { totalPrecio } = useTotal();
 
   const onSubmit = () => {
     // Número de teléfono y mensaje predefinido
@@ -48,7 +50,7 @@ function PagarForm() {
     ​​​Dirección: ${direccion}
     ​​​Teléfono: ${telefono}
     
-  El monto TOTAL a abonar es de: 
+  El monto TOTAL a abonar es de: ${totalPrecio}
 
     ​​Medios de pago: efectivo/transferencias.
 
