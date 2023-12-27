@@ -33,8 +33,8 @@ function Navbar() {
   return (
     <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 py-2">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="Dom romulo.png" alt="logo1" className="h-14 md:h-18 mx-auto md:mx-0" />
+        <a href="/" className="flex items-center md:space-x-3 rtl:space-x-reverse">
+          <img src="Dom romulo.png" alt="logo1" className="h-12 md:h-18 mx-auto md:mx-0" />
           <img src="pizza.png" alt="logo2" className="h-14" />
         </a>
         <div className="flex md:order-2 md:space-x-0 rtl:space-x-reverse">

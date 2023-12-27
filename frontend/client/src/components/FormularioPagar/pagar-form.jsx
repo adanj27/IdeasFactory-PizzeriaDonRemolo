@@ -17,7 +17,8 @@ const nameRules = {
 const phoneRules = {
   required: 'Debe ingresar un teléfono',
   pattern: {
-    value: /^(?:(?:00)?\+?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/i,
+    value:
+      /^(?:(?:00)?\+?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/i,
     message: 'El número de teléfono no es válido',
   },
 };
@@ -33,22 +34,19 @@ const dirRules = {
 function PagarForm() {
   const [hidden, setHidden] = useState(false);
   const { handleSubmit } = useFormContext();
-  const [nombre, setNombre] = useState('');
-  const [direccion, setDireccion] = useState('');
-  const [telefono, setTelefono] = useState('');
   /*   const [montoTotal, setMontoTotal] = useState(''); */
   const { totalPrecio } = useTotal();
 
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     // Número de teléfono y mensaje predefinido
     /* ​​ Monto Total: $${montoTotal.toFixed(2)} */
     const phoneNumber = '+5493416836919'; // Reemplaza con el número de teléfono al que quieres enviar el mensaje
     const mensaje = `
     Hola!! Realicé un pedido, mis datos son:
     
-    ​​​​Nombre: ${nombre}
-    ​​​Dirección: ${direccion}
-    ​​​Teléfono: ${telefono}
+    ​​​​Nombre: ${data.nombre}
+    ​​​Dirección: ${data.direccion}
+    ​​​Teléfono: ${data.telefono}
     
   El monto TOTAL a abonar es de: ${totalPrecio}
 
@@ -65,40 +63,69 @@ function PagarForm() {
 `;
     // aca con ${he.encode('😊')} encodeas los emojis usando la libreria he (import he from 'he')
     // Construir el enlace de WhatsApp
-    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensaje)}`;
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      mensaje,
+    )}`;
 
     // Redirigir a la ventana de WhatsApp
     window.open(whatsappLink, '_blank');
     setHidden(true);
   };
 
-  return (
-    hidden ? (
-      <div className="flex flex-col items-center justify-center">
-        <h2 className="text-4xl text-center mt-36 font-display text-[#CF5100]">Gracias por tu pedido!</h2>
-        <p className="text-xl text-center py-8 font-display"> Puede seguir su pedido a través del chat de WhatsApp </p>
-        <Link to="/">
-          <button className="bg-[#CF5100] text-white px-4 py-2 font-semibold rounded-md hover:opacity-80" type="submit">
-            Volver al inicio
-          </button>
-        </Link>
-      </div>
-    ) : (
-      <div className="max-w-md mx-auto my-36 relative overflow-hidden z-10 bg-white p-8 rounded-lg shadow-md border-2 border-[#CF5100]">
-        <h2 className="text-2xl text-[#CF5100] font-bold mb-6">Completá tus datos:</h2>
+  return hidden ? (
+    <div className="flex flex-col items-center justify-center">
+      <h2 className="text-4xl text-center mt-36 font-display text-[#CF5100]">
+        Gracias por tu pedido!
+      </h2>
+      <p className="text-xl text-center py-8 font-display">
+        {' '}
+        Puede seguir su pedido a través del chat de WhatsApp
+        {' '}
+      </p>
+      <Link to="/">
+        <button
+          className="bg-[#CF5100] text-white px-4 py-2 font-semibold rounded-md hover:opacity-80"
+          type="submit"
+        >
+          Volver al inicio
+        </button>
+      </Link>
+    </div>
+  ) : (
+    <div className="max-w-md mx-auto my-36 relative overflow-hidden z-10 bg-white p-8 rounded-lg shadow-md border-2 border-[#CF5100]">
+      <h2 className="text-2xl text-[#CF5100] font-bold mb-6">
+        Completá tus datos:
+      </h2>
 
-        <form onSubmit={handleSubmit(onSubmit)} noValidate autoComplete="off">
-          <Input name="nombre" type="text" placeholder="Ingresá tu nombre..." rules={nameRules} onChange={(e) => setNombre(e.target.value)} />
-          <Input name="phone" type="phone" placeholder="221-1234567" rules={phoneRules} onChange={(e) => setTelefono(e.target.value)} />
-          <Input name="dir" type="text" placeholder="Ingresá tu dirección..." rules={dirRules} onChange={(e) => setDireccion(e.target.value)} />
-          <div className="flex justify-end">
-            <button className="bg-[#CF5100] text-white px-4 py-2 font-bold rounded-md hover:opacity-80" type="submit">
-              Pedir
-            </button>
-          </div>
-        </form>
-      </div>
-    )
+      <form onSubmit={handleSubmit(onSubmit)} noValidate autoComplete="off">
+        <Input
+          name="name"
+          type="text"
+          placeholder="Ingresá tu nombre..."
+          rules={nameRules}
+        />
+        <Input
+          name="phone"
+          type="phone"
+          placeholder="221-1234567"
+          rules={phoneRules}
+        />
+        <Input
+          name="dir"
+          type="text"
+          placeholder="Ingresá tu dirección..."
+          rules={dirRules}
+        />
+        <div className="flex justify-end">
+          <button
+            className="bg-[#CF5100] text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
+            type="submit"
+          >
+            Pedir
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
