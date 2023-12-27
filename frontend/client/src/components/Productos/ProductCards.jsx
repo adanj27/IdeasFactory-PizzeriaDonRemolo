@@ -26,9 +26,9 @@ function ProductCard({ productos }) {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-14 py-32 lg:px-16 px-12 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
+    <div className="sm:grid-cols-2 grid-cols-1 grid gap-8 lg:gap-14 lg:grid-cols-3 py-32 lg:px-16 px-5 justify-center items-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br">
       {menu.map(({ productId, productName, productDescription, price, imagePath, amount }) => (
-        <div key={productName} className="w-[380px] h-[480px] bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div key={productName} className="w-full bg-white rounded-3xl shadow-xl overflow-hidden">
           <div className="w-full">
             <img src={imagePath} alt="pizza" className="w-full h-[215px]" />
 
