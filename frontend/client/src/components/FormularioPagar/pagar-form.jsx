@@ -64,7 +64,7 @@ function PagarForm() {
     // aca con ${he.encode('😊')} encodeas los emojis usando la libreria he (import he from 'he')
     // Construir el enlace de WhatsApp
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      mensaje
+      mensaje,
     )}`;
 
     // Redirigir a la ventana de WhatsApp
@@ -79,7 +79,8 @@ function PagarForm() {
       </h2>
       <p className="text-xl text-center py-8 font-display">
         {' '}
-        Puede seguir su pedido a través del chat de WhatsApp{' '}
+        Puede seguir su pedido a través del chat de WhatsApp
+        {' '}
       </p>
       <Link to="/">
         <button
